@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Frog Weather</string>
+
+    <!--  TAB TITLES  -->
+    <string name="ten_days_tab">10 DAYS</string>
+    <string name="tomorrow_tab">TOMORROW</string>
+    <string name="today_tab">TODAY</string>
+
+    <!--  FRAGMENT TITLES  -->
+    <string name="settings_fragment_title">Settings</string>
+    <string name="weather_map_fragment_title">Weather Map</string>
+
+    <!--  DRAWER TITLES  -->
+    <string name="weather_map_menu_title">Weather Map</string>
+    <string name="refresh_menu_title">Refresh</string>
+    <string name="detect_location_menu_title">Detect Location</string>
+    <string name="settings_menu_title">Settings</string>
+
+    <!--  CONTENT DESCRIPTIONS  -->
+    <string name="application_icon_content_description">Application icon</string>
+
+</resources>
