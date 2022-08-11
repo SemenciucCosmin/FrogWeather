@@ -7,8 +7,49 @@
     <string name="today_tab">TODAY</string>
 
     <!--  FRAGMENT TITLES  -->
-    <string name="settings_fragment_title">Settings</string>
+    <string name="settings_title">Settings</string>
     <string name="weather_map_fragment_title">Weather Map</string>
+
+    <!--  SETTINGS SECTOR TITLES  -->
+    <string name="settings_sector_title">Settings</string>
+    <string name="units_sector_title">Units</string>
+    <string name="display_sector_title">Display</string>
+    <string name="notification_sector_title">Notification</string>
+
+    <!--  SETTINGS TAB TITLES  -->
+    <string name="detect_location_tab">Detect Location</string>
+    <string name="hour_format_tab">AM/PM</string>
+    <string name="temperature_units_tab">Temperature units</string>
+    <string name="length_units_tab">Length units</string>
+    <string name="speed_units_tab">Speed units</string>
+    <string name="distance_units_tab">Distance units</string>
+    <string name="pressure_units_tab">Pressure units</string>
+    <string name="wind_direction_format_tab">Wind direction format</string>
+    <string name="weather_notification_tab">Show weather in notification</string>
+    <string name="notification_type_tab">Notification type</string>
+
+    <!--  SETTINGS TAB OPTIONS  -->
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="millimeters">Millimeters (mm)</string>
+    <string name="inches">Inches (in)</string>
+    <string name="meters">Meters per second (m/s)</string>
+    <string name="kilometers">Kilometers per hour (kph)</string>
+    <string name="miles">Miles per hour (mph)</string>
+    <string name="beaufort">Beaufort wind scale (bft)</string>
+    <string name="knots">Knots (kn)</string>
+    <string name="km">km</string>
+    <string name="mi">mi</string>
+    <string name="hpa">hPa</string>
+    <string name="kpa">kPa</string>
+    <string name="mm_hg">mmHg</string>
+    <string name="in_hg">inHg</string>
+    <string name="no_indications">No indication</string>
+    <string name="arrows">Arrows</string>
+    <string name="abbreviations">Abbreviations</string>
+    <string name="default_android_view">Default Android view</string>
+    <string name="simple_notification">Simple notification</string>
 
     <!--  DRAWER TITLES  -->
     <string name="weather_map_menu_title">Weather Map</string>
