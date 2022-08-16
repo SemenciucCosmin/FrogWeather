@@ -4,7 +4,7 @@
     android:layout_height="@dimen/drawer_header_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:background="@color/clear_sky_top_bar">
+    android:background="@color/light_blue_active">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="@dimen/app_icon_size"

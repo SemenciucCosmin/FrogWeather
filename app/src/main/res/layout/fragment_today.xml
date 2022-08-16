@@ -4,5 +4,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.TodayFragment"
-    android:background="@color/cloudy_top_bar">
+    android:background="@color/dark_blue">
 </FrameLayout>

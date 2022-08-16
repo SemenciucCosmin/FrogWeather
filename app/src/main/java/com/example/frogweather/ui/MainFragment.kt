@@ -1,6 +1,7 @@
 package com.example.frogweather.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -45,6 +46,12 @@ class MainFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.drawerLayout.close()
+
     }
 
     private fun setDrawerItemAction(menuItem: MenuItem): Boolean{

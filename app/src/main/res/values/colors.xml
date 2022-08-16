@@ -8,14 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="inactive_tab_bar_text">#c0d3ea</color>
-    <color name="cloudy_top_bar">#407ac4</color>
-    <color name="clear_sky_top_bar">#1e95f1</color>
-    <color name="low_wind_bar">#86a3ab</color>
-    <color name="medium_wind_bar">#6d8fcf</color>
-    <color name="water_drop_bar">#00ffff</color>
-    <color name="gray_text">#9e9e9e</color>
-    <color name="gray_icon">#757575</color>
-    <color name="percentage">#1ac5c6</color>
-    <color name="black_text">#202020</color>
+    <color name="dark_blue">#407ac4</color>
+    <color name="light_blue_inactive">#c0d3ea</color>
+    <color name="light_blue_active">#1e95f1</color>
+    <color name="gray_1">#DCDCDC</color>
+    <color name="gray_2">#9E9E9E</color>
+    <color name="gray_3">#757575</color>
+    <color name="black_1">#202020</color>
+    <color name="orange">#FF8800</color>
 </resources>
