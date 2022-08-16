@@ -1,13 +1,13 @@
 package com.example.frogweather.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.frogweather.R
@@ -24,10 +24,10 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        binding.appBar.drawerButton.setOnClickListener{ binding.drawerLayout.open() }
+        binding.appBar.drawerButton.setOnClickListener { binding.drawerLayout.open() }
         binding.navView.setNavigationItemSelectedListener { setDrawerItemAction(it) }
 
-        val fragments = listOf(TodayFragment(), TodayFragment(), TenDaysFragment())
+        val fragments = listOf(OneDayFragment(), OneDayFragment(), TenDaysFragment())
         val adapter = ViewPagerAdapter(fragments, activity as AppCompatActivity)
         binding.appBar.viewPager.adapter = adapter
         binding.appBar.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -36,26 +36,29 @@ class MainFragment : Fragment() {
             }
         })
 
-        binding.appBar.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+        binding.appBar.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab != null) {
                     binding.appBar.viewPager.currentItem = tab.position
                 }
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        (activity as AppCompatActivity).window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.blue_2)
+
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
         binding.drawerLayout.close()
-
     }
 
-    private fun setDrawerItemAction(menuItem: MenuItem): Boolean{
-        when (menuItem.itemId){
+    private fun setDrawerItemAction(menuItem: MenuItem): Boolean {
+        when (menuItem.itemId) {
             R.id.weatherMapFragment -> {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToWeatherMapFragment())
             }

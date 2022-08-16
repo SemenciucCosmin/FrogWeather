@@ -2,62 +2,60 @@
     <string name="app_name">Frog Weather</string>
 
     <!--  TAB TITLES  -->
-    <string name="ten_days_tab">10 DAYS</string>
-    <string name="tomorrow_tab">TOMORROW</string>
-    <string name="today_tab">TODAY</string>
+    <string name="lbl_ten_days_tab">10 DAYS</string>
+    <string name="lbl_tomorrow_tab">TOMORROW</string>
+    <string name="lbl_today_tab">TODAY</string>
 
     <!--  FRAGMENT TITLES  -->
-    <string name="settings_title">Settings</string>
-    <string name="weather_map_fragment_title">Weather Map</string>
+    <string name="lbl_settings_title">Settings</string>
+    <string name="lbl_weather_map_fragment_title">Weather Map</string>
 
     <!--  SETTINGS SECTOR TITLES  -->
-    <string name="settings_sector_title">Settings</string>
-    <string name="units_sector_title">Units</string>
-    <string name="display_sector_title">Display</string>
-    <string name="notification_sector_title">Notification</string>
+    <string name="lbl_settings_sector_title">Settings</string>
+    <string name="lbl_units_sector_title">Units</string>
+    <string name="lbl_display_sector_title">Display</string>
+    <string name="lbl_notification_sector_title">Notification</string>
 
     <!--  SETTINGS TAB TITLES  -->
-    <string name="detect_location_tab">Detect Location</string>
-    <string name="hour_format_tab">AM/PM</string>
-    <string name="temperature_units_tab">Temperature units</string>
-    <string name="length_units_tab">Length units</string>
-    <string name="speed_units_tab">Speed units</string>
-    <string name="distance_units_tab">Distance units</string>
-    <string name="pressure_units_tab">Pressure units</string>
-    <string name="wind_direction_format_tab">Wind direction format</string>
-    <string name="weather_notification_tab">Show weather in notification</string>
-    <string name="notification_type_tab">Notification type</string>
+    <string name="lbl_detect_location_tab">Detect Location</string>
+    <string name="lbl_hour_format_tab">AM/PM</string>
+    <string name="lbl_temperature_units_tab">Temperature units</string>
+    <string name="lbl_length_units_tab">Length units</string>
+    <string name="lbl_speed_units_tab">Speed units</string>
+    <string name="lbl_distance_units_tab">Distance units</string>
+    <string name="lbl_pressure_units_tab">Pressure units</string>
+    <string name="lbl_wind_direction_format_tab">Wind direction format</string>
+    <string name="lbl_weather_notification_tab">Show weather in notification</string>
+    <string name="lbl_notification_type_tab">Notification type</string>
 
     <!--  SETTINGS TAB OPTIONS  -->
-    <string name="celsius">Celsius</string>
-    <string name="fahrenheit">Fahrenheit</string>
-    <string name="kelvin">Kelvin</string>
-    <string name="millimeters">Millimeters (mm)</string>
-    <string name="inches">Inches (in)</string>
-    <string name="meters">Meters per second (m/s)</string>
-    <string name="kilometers">Kilometers per hour (kph)</string>
-    <string name="miles">Miles per hour (mph)</string>
-    <string name="beaufort">Beaufort wind scale (bft)</string>
-    <string name="knots">Knots (kn)</string>
-    <string name="km">km</string>
-    <string name="mi">mi</string>
-    <string name="hpa">hPa</string>
-    <string name="kpa">kPa</string>
-    <string name="mm_hg">mmHg</string>
-    <string name="in_hg">inHg</string>
-    <string name="no_indications">No indication</string>
-    <string name="arrows">Arrows</string>
-    <string name="abbreviations">Abbreviations</string>
-    <string name="default_android_view">Default Android view</string>
-    <string name="simple_notification">Simple notification</string>
+    <string name="lbl_celsius">Celsius</string>
+    <string name="lbl_fahrenheit">Fahrenheit</string>
+    <string name="lbl_kelvin">Kelvin</string>
+    <string name="lbl_millimeters">Millimeters (mm)</string>
+    <string name="lbl_inches">Inches (in)</string>
+    <string name="lbl_meters">Meters per second (m/s)</string>
+    <string name="lbl_kilometers">Kilometers per hour (kph)</string>
+    <string name="lbl_miles">Miles per hour (mph)</string>
+    <string name="lbl_beaufort">Beaufort wind scale (bft)</string>
+    <string name="lbl_knots">Knots (kn)</string>
+    <string name="lbl_km">km</string>
+    <string name="lbl_mi">mi</string>
+    <string name="lbl_hpa">hPa</string>
+    <string name="lbl_kpa">kPa</string>
+    <string name="lbl_mm_hg">mmHg</string>
+    <string name="lbl_in_hg">inHg</string>
+    <string name="lbl_no_indications">No indication</string>
+    <string name="lbl_arrows">Arrows</string>
+    <string name="lbl_abbreviations">Abbreviations</string>
+    <string name="lbl_default_android_view">Default Android view</string>
+    <string name="lbl_simple_notification">Simple notification</string>
 
     <!--  DRAWER TITLES  -->
-    <string name="weather_map_menu_title">Weather Map</string>
-    <string name="refresh_menu_title">Refresh</string>
-    <string name="detect_location_menu_title">Detect Location</string>
-    <string name="settings_menu_title">Settings</string>
-
-    <!--  CONTENT DESCRIPTIONS  -->
-    <string name="application_icon_content_description">Application icon</string>
+    <string name="lbl_weather_map_menu_title">Weather Map</string>
+    <string name="lbl_refresh_menu_title">Refresh</string>
+    <string name="lbl_detect_location_menu_title">Detect Location</string>
+    <string name="lbl_settings_menu_title">Settings</string>
+    <string name="lbl_cancel_button">Cancel</string>
 
 </resources>
