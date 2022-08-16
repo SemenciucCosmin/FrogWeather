@@ -27,7 +27,7 @@ class MainFragment : Fragment() {
         binding.appBar.drawerButton.setOnClickListener { binding.drawerLayout.open() }
         binding.navView.setNavigationItemSelectedListener { setDrawerItemAction(it) }
 
-        val fragments = listOf(TodayFragment(), TodayFragment(), TenDaysFragment())
+        val fragments = listOf(OneDayFragment(), OneDayFragment(), TenDaysFragment())
         val adapter = ViewPagerAdapter(fragments, activity as AppCompatActivity)
         binding.appBar.viewPager.adapter = adapter
         binding.appBar.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

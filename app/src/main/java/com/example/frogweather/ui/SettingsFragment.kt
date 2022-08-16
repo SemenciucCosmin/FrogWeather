@@ -10,14 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.frogweather.R
-import com.example.frogweather.data.DistanceType
-import com.example.frogweather.data.LengthType
-import com.example.frogweather.data.NotificationType
-import com.example.frogweather.data.PressureType
 import com.example.frogweather.data.SettingType
-import com.example.frogweather.data.SpeedType
-import com.example.frogweather.data.TemperatureType
-import com.example.frogweather.data.WindDirectionType
 import com.example.frogweather.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -92,62 +85,89 @@ class SettingsFragment : Fragment() {
 
     private fun showSettingDialog(settingType: SettingType) {
         val alertDialog = AlertDialog.Builder(requireContext(), R.style.SettingsDialogTheme)
-        alertDialog.setTitle(settingType.settingType)
-        alertDialog.setNegativeButton("Cancel") { _, _ -> }
-        val settingItems = getSettingsItems(settingType)
+        alertDialog.setTitle(getSettingsDialogTitle(settingType))
+        alertDialog.setNegativeButton(getString(R.string.lbl_cancel_button)) { _, _ -> }
+        val settingItems = getSettingsDialogItems(settingType)
         alertDialog.setSingleChoiceItems(settingItems, 1) { _, _ -> }
         val alert = alertDialog.create()
         alert.show()
     }
 
-    private fun getSettingsItems(settingType: SettingType): Array<String> {
+    private fun getSettingsDialogTitle(settingType: SettingType): String {
+        return when (settingType) {
+            SettingType.TEMPERATURE -> {
+                getString(R.string.lbl_temperature_units_tab)
+            }
+            SettingType.LENGTH -> {
+                getString(R.string.lbl_length_units_tab)
+            }
+            SettingType.SPEED -> {
+                getString(R.string.lbl_speed_units_tab)
+            }
+            SettingType.DISTANCE -> {
+                getString(R.string.lbl_distance_units_tab)
+            }
+            SettingType.PRESSURE -> {
+                getString(R.string.lbl_pressure_units_tab)
+            }
+            SettingType.WIND_DIRECTION_FORMAT -> {
+                getString(R.string.lbl_wind_direction_format_tab)
+            }
+            SettingType.NOTIFICATION -> {
+                getString(R.string.lbl_notification_type_tab)
+            }
+        }
+    }
+
+    private fun getSettingsDialogItems(settingType: SettingType): Array<String> {
         return when (settingType) {
             SettingType.TEMPERATURE -> {
                 arrayOf(
-                    TemperatureType.CELSIUS.temperatureType,
-                    TemperatureType.FAHRENHEIT.temperatureType, TemperatureType.KELVIN.temperatureType
+                    getString(R.string.lbl_celsius),
+                    getString(R.string.lbl_fahrenheit),
+                    getString(R.string.lbl_kelvin)
                 )
             }
             SettingType.LENGTH -> {
                 arrayOf(
-                    LengthType.MILLIMETERS.lengthType,
-                    LengthType.INCHES.lengthType
+                    getString(R.string.lbl_millimeters),
+                    getString(R.string.lbl_inches)
                 )
             }
             SettingType.SPEED -> {
                 arrayOf(
-                    SpeedType.METERS_PER_SECOND.speedType,
-                    SpeedType.KILOMETERS_PER_HOUR.speedType,
-                    SpeedType.MILES_PER_HOUR.speedType,
-                    SpeedType.BEAUFORT_WIND_SCALE.speedType,
-                    SpeedType.KNOTS.speedType
+                    getString(R.string.lbl_meters),
+                    getString(R.string.lbl_kilometers),
+                    getString(R.string.lbl_miles),
+                    getString(R.string.lbl_beaufort),
+                    getString(R.string.lbl_knots)
                 )
             }
             SettingType.DISTANCE -> {
                 arrayOf(
-                    DistanceType.KILOMETERS.distanceType,
-                    DistanceType.MILES.distanceType
+                    getString(R.string.lbl_km),
+                    getString(R.string.lbl_mi)
                 )
             }
             SettingType.PRESSURE -> {
                 arrayOf(
-                    PressureType.HPA.pressureType,
-                    PressureType.KPA.pressureType,
-                    PressureType.MMHG.pressureType,
-                    PressureType.INHG.pressureType
+                    getString(R.string.lbl_hpa),
+                    getString(R.string.lbl_kpa),
+                    getString(R.string.lbl_mm_hg),
+                    getString(R.string.lbl_in_hg)
                 )
             }
             SettingType.WIND_DIRECTION_FORMAT -> {
                 arrayOf(
-                    WindDirectionType.NO_INDICATION.windDirectionType,
-                    WindDirectionType.ARROWS.windDirectionType,
-                    WindDirectionType.ABBREVIATIONS.windDirectionType
+                    getString(R.string.lbl_no_indications),
+                    getString(R.string.lbl_arrows),
+                    getString(R.string.lbl_abbreviations)
                 )
             }
             SettingType.NOTIFICATION -> {
                 arrayOf(
-                    NotificationType.DEFAULT.notificationType,
-                    NotificationType.SIMPLE.notificationType
+                    getString(R.string.lbl_default_android_view),
+                    getString(R.string.lbl_simple_notification)
                 )
             }
         }

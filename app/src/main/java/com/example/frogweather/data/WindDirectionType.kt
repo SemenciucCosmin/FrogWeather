@@ -1,12 +1,12 @@
 package com.example.frogweather.data
 
-enum class WindDirectionType(val windDirectionType: String, val index: Int) {
-    NO_INDICATION("No indication", 0),
-    ARROWS("Arrows", 1),
-    ABBREVIATIONS("Abbreviations", 2);
+enum class WindDirectionType(val windDirectionType: Int) {
+    NO_INDICATION(0),
+    ARROWS(1),
+    ABBREVIATIONS(2);
 
     companion object {
-        fun getByWindDirectionType(windDirectionType: String) =
+        fun getByWindDirectionType(windDirectionType: Int) =
             values().firstOrNull { it.windDirectionType == windDirectionType } ?: ARROWS
     }
 }

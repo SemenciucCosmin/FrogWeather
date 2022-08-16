@@ -10,5 +10,4 @@
     <dimen name="settings_sector_title_size">15sp</dimen>
     <dimen name="setting_title_text_size">17sp</dimen>
     <dimen name="line_view_height">1dp</dimen>
-    <dimen name="settings_scroll_padding_bottom">50dp</dimen>
 </resources>

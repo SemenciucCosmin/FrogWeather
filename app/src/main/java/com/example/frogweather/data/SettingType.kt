@@ -1,16 +1,16 @@
 package com.example.frogweather.data
 
-enum class SettingType(val settingType: String) {
-    TEMPERATURE("Temperature units"),
-    LENGTH("Length units"),
-    SPEED("Speed units"),
-    DISTANCE("Distance units"),
-    PRESSURE("Pressure units"),
-    WIND_DIRECTION_FORMAT("Wind direction format"),
-    NOTIFICATION("Notification type");
+enum class SettingType(val settingType: Int) {
+    TEMPERATURE(0),
+    LENGTH(1),
+    SPEED(2),
+    DISTANCE(3),
+    PRESSURE(4),
+    WIND_DIRECTION_FORMAT(5),
+    NOTIFICATION(6);
 
     companion object {
-        fun getBySettingType(settingType: String) =
+        fun getBySettingType(settingType: Int) =
             values().firstOrNull { it.settingType == settingType } ?: TEMPERATURE
     }
 }

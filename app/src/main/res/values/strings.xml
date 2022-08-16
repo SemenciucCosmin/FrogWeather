@@ -56,5 +56,6 @@
     <string name="lbl_refresh_menu_title">Refresh</string>
     <string name="lbl_detect_location_menu_title">Detect Location</string>
     <string name="lbl_settings_menu_title">Settings</string>
+    <string name="lbl_cancel_button">Cancel</string>
 
 </resources>

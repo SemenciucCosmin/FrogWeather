@@ -1,11 +1,11 @@
 package com.example.frogweather.data
 
-enum class NotificationType(val notificationType: String, val index: Int) {
-    DEFAULT("Default Android view", 0),
-    SIMPLE("Simple notification", 1);
+enum class NotificationType(val notificationType: Int) {
+    DEFAULT(0),
+    SIMPLE(1);
 
     companion object {
-        fun getByNotificationType(notificationType: String) =
+        fun getByNotificationType(notificationType: Int) =
             values().firstOrNull { it.notificationType == notificationType } ?: SIMPLE
     }
 }
