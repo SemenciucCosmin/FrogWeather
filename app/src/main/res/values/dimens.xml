@@ -6,8 +6,9 @@
     <dimen name="drawer_header_height">120dp</dimen>
     <dimen name="back_icon_padding">5dp</dimen>
     <dimen name="drawer_title_margin_start">50dp</dimen>
-    <dimen name="setting_element_distance">15dp</dimen>
+    <dimen name="setting_element_distance">18dp</dimen>
     <dimen name="settings_sector_title_size">15sp</dimen>
     <dimen name="setting_title_text_size">17sp</dimen>
     <dimen name="line_view_height">1dp</dimen>
+    <dimen name="settings_scroll_padding_bottom">50dp</dimen>
 </resources>

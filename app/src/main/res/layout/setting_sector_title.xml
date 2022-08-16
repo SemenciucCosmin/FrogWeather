@@ -4,9 +4,10 @@
     android:id="@+id/sector_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:fontFamily="@font/pluto_sans_cond_light"
     android:paddingStart="@dimen/setting_element_distance"
-    android:paddingEnd="@dimen/setting_element_distance"
     android:paddingTop="@dimen/setting_element_distance"
-    android:textColor="@color/light_blue_active"
+    android:paddingEnd="@dimen/setting_element_distance"
+    android:textColor="@color/settings_toolbar"
     android:textSize="@dimen/settings_sector_title_size"
-    tools:text="@string/settings_sector_title" />
+    tools:text="@string/lbl_settings_sector_title" />

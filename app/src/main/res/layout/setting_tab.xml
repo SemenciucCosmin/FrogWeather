@@ -6,34 +6,36 @@
     android:layout_height="wrap_content"
     android:background="@drawable/setting_tab_ripple"
     android:clickable="true"
-    android:orientation="vertical"
-    android:focusable="true">
+    android:focusable="true"
+    android:orientation="vertical">
 
     <View
         android:id="@+id/line_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/line_view_height"
-        android:background="@color/gray_2" />
+        android:background="@color/gray_1" />
 
     <TextView
         android:id="@+id/tab_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
         android:paddingStart="@dimen/setting_element_distance"
         android:paddingTop="@dimen/setting_element_distance"
         android:paddingEnd="@dimen/setting_element_distance"
         android:textColor="@color/gray_2"
         android:textSize="@dimen/setting_title_text_size"
-        tools:text="@string/temperature_units_tab" />
+        tools:text="@string/lbl_temperature_units_tab" />
 
     <TextView
         android:id="@+id/tab_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
         android:paddingStart="@dimen/setting_element_distance"
         android:paddingEnd="@dimen/setting_element_distance"
         android:paddingBottom="@dimen/setting_element_distance"
         android:textColor="@color/gray_3"
-        tools:text="@string/celsius" />
+        tools:text="@string/lbl_celsius" />
 
 </LinearLayout>

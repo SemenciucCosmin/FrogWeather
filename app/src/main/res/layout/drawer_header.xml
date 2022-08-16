@@ -4,14 +4,14 @@
     android:layout_height="@dimen/drawer_header_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:background="@color/light_blue_active">
+    android:background="@color/blue_2">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="@dimen/app_icon_size"
         android:layout_height="@dimen/app_icon_size"
         android:layout_gravity="center_vertical"
         android:padding="@dimen/app_icon_padding"
-        android:contentDescription="@string/application_icon_content_description"
+        android:contentDescription="@null"
         android:src="@mipmap/ic_frog_weather_round"
         app:shapeAppearanceOverlay="@style/roundedImageView" />
 

@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/light_blue_active">
+        android:background="@color/blue_2">
 
         <ImageView
             android:id="@+id/back_button"
@@ -27,7 +27,7 @@
             android:layout_marginStart="@dimen/drawer_title_margin_start"
             android:textColor="@color/white"
             android:textSize="@dimen/drawer_title_size"
-            tools:text="@string/settings_title" />
+            tools:text="@string/lbl_settings_title" />
 
     </androidx.appcompat.widget.Toolbar>
 </com.google.android.material.appbar.AppBarLayout>

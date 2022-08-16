@@ -8,12 +8,19 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="dark_blue">#407ac4</color>
-    <color name="light_blue_inactive">#c0d3ea</color>
-    <color name="light_blue_active">#1e95f1</color>
+    <color name="light_inactive_text">#B0DEFD</color>
+    <color name="dark_inactive_text">#C0D3EA</color>
+    <color name="map_bottom_bar">#61A8E0</color>
+    <color name="blue_2">#1E95F1</color>
+    <color name="settings_toolbar">#2196F3</color>
+    <color name="settings_status_bar">#1E88E4</color>
+    <color name="dark_toolbar">#407AC4</color>
+
     <color name="gray_1">#DCDCDC</color>
-    <color name="gray_2">#9E9E9E</color>
+    <color name="gray_2">#A2A2A2</color>
     <color name="gray_3">#757575</color>
+
     <color name="black_1">#202020</color>
+
     <color name="orange">#FF8800</color>
 </resources>
