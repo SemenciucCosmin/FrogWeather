@@ -1,6 +1,7 @@
 package com.example.frogweather.ui
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,113 +9,256 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.frogweather.R
+import com.example.frogweather.data.DISTANCE_KM
+import com.example.frogweather.data.DISTANCE_MI
+import com.example.frogweather.data.DistanceType
+import com.example.frogweather.data.LENGTH_INCHES
+import com.example.frogweather.data.LENGTH_MILLIMETERS
+import com.example.frogweather.data.LengthType
+import com.example.frogweather.data.NOTIFICATION_TYPE_DEFAULT
+import com.example.frogweather.data.NOTIFICATION_TYPE_SIMPLE
+import com.example.frogweather.data.NotificationType
+import com.example.frogweather.data.PRESSURE_HPA
+import com.example.frogweather.data.PRESSURE_INHG
+import com.example.frogweather.data.PRESSURE_KPA
+import com.example.frogweather.data.PRESSURE_MMHG
+import com.example.frogweather.data.PressureType
+import com.example.frogweather.data.SPEED_BEAUFORT
+import com.example.frogweather.data.SPEED_KILOMETERS
+import com.example.frogweather.data.SPEED_KNOTS
+import com.example.frogweather.data.SPEED_METERS
+import com.example.frogweather.data.SPEED_MILES
 import com.example.frogweather.data.SettingType
+import com.example.frogweather.data.Settings
+import com.example.frogweather.data.SpeedType
+import com.example.frogweather.data.TEMPERATURE_CELSIUS
+import com.example.frogweather.data.TEMPERATURE_FAHRENHEIT
+import com.example.frogweather.data.TEMPERATURE_KELVIN
+import com.example.frogweather.data.TemperatureType
+import com.example.frogweather.data.WIND_DIRECTION_ABBREVIATIONS
+import com.example.frogweather.data.WIND_DIRECTION_ARROWS
+import com.example.frogweather.data.WIND_DIRECTION_NO_INDICATION
+import com.example.frogweather.data.WindDirectionType
 import com.example.frogweather.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
     private lateinit var binding: FragmentSettingsBinding
+    private val settingsViewModel: SettingsViewModel by activityViewModels {
+        SettingsViewModel.SettingsViewModelFactory(
+            (activity?.application as FrogWeatherApplication)
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        setSettingViews()
         (activity as AppCompatActivity).window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.settings_status_bar)
+
+        settingsViewModel.getSettings().observe(viewLifecycleOwner) {
+            setSettingTabsTitle(it)
+            setSettingTabsOption(it)
+            setSettingTabsClickListener(it)
+        }
+
         return binding.root
     }
 
-    private fun setSettingViews() {
+    private fun setSettingTabsOption(settings: Settings) {
+        binding.apply {
+            detectLocationTab.checkbox.isChecked = settings.detectLocation
+            hoursFormatTab.checkbox.isChecked = settings.hourFormatUnit
+            temperatureUnitsTab.tabOption.text = getString(TemperatureType.getByTemperatureType(settings.temperatureUnit).resourceId)
+            lengthUnitsTab.tabOption.text = getString(LengthType.getByLengthType(settings.lengthUnit).resourceId)
+            speedUnitsTab.tabOption.text = getString(SpeedType.getBySpeedType(settings.speedUnit).resourceId)
+            distanceUnitsTab.tabOption.text = getString(DistanceType.getByDistanceType(settings.distanceUnit).resourceId)
+            pressureUnitsTab.tabOption.text = getString(PressureType.getByPressureType(settings.pressureUnit).resourceId)
+            windDirectionFormatTab.tabOption.text = getString(WindDirectionType.getByWindDirectionType(settings.windDirection).resourceId)
+            showNotificationsTab.checkbox.isChecked = settings.showNotification
+            notificationTypeTab.tabOption.text = getString(NotificationType.getByNotificationType(settings.notificationType).resourceId)
+        }
+    }
+
+    private fun setSettingTabsTitle(settings: Settings) {
         binding.apply {
             appBar.toolbarTitle.text = getString(R.string.lbl_settings_title)
-            appBar.backButton.setOnClickListener { findNavController().navigateUp() }
             settingsSectorTitle.sectorTitle.text = getString(R.string.lbl_settings_title)
-            detectLocationTab.tabTitle.text = getString(R.string.lbl_detect_location_tab)
-            detectLocationTab.root.setOnClickListener { detectLocationTab.checkbox.isChecked = !detectLocationTab.checkbox.isChecked }
+            detectLocationTab.tabTitle.text = getString(SettingType.DETECT_LOCATION.resourceId)
             unitsSectorTitle.sectorTitle.text = getString(R.string.lbl_units_sector_title)
-            hoursFormatTab.tabTitle.text = getString(R.string.lbl_hour_format_tab)
-            hoursFormatTab.root.setOnClickListener { hoursFormatTab.checkbox.isChecked = !hoursFormatTab.checkbox.isChecked }
-            temperatureUnitsTab.tabTitle.text = getString(R.string.lbl_temperature_units_tab)
-            temperatureUnitsTab.tabOption.text = getString(R.string.lbl_celsius)
-            lengthUnitsTab.tabTitle.text = getString(R.string.lbl_length_units_tab)
-            lengthUnitsTab.tabOption.text = getString(R.string.lbl_millimeters)
-            speedUnitsTab.tabTitle.text = getString(R.string.lbl_speed_units_tab)
-            speedUnitsTab.tabOption.text = getString(R.string.lbl_meters)
-            distanceUnitsTab.tabTitle.text = getString(R.string.lbl_distance_units_tab)
-            distanceUnitsTab.tabOption.text = getString(R.string.lbl_km)
-            pressureUnitsTab.tabTitle.text = getString(R.string.lbl_pressure_units_tab)
-            pressureUnitsTab.tabOption.text = getString(R.string.lbl_mm_hg)
+            hoursFormatTab.tabTitle.text = getString(SettingType.HOUR_FORMAT.resourceId)
+            temperatureUnitsTab.tabTitle.text = getString(SettingType.TEMPERATURE.resourceId)
+            lengthUnitsTab.tabTitle.text = getString(SettingType.LENGTH.resourceId)
+            speedUnitsTab.tabTitle.text = getString(SettingType.SPEED.resourceId)
+            distanceUnitsTab.tabTitle.text = getString(SettingType.DISTANCE.resourceId)
+            pressureUnitsTab.tabTitle.text = getString(SettingType.PRESSURE.resourceId)
             displaySectorTitle.sectorTitle.text = getString(R.string.lbl_display_sector_title)
-            windDirectionFormatTab.tabTitle.text = getString(R.string.lbl_wind_direction_format_tab)
-            windDirectionFormatTab.tabOption.text = getString(R.string.lbl_arrows)
+            windDirectionFormatTab.tabTitle.text = getString(SettingType.WIND_DIRECTION_FORMAT.resourceId)
             windDirectionFormatTab.lineView.visibility = View.GONE
             notificationSectorTitle.sectorTitle.text = getString(R.string.lbl_notification_sector_title)
-            showNotificationsTab.tabTitle.text = getString(R.string.lbl_weather_notification_tab)
-            showNotificationsTab.root.setOnClickListener {
-                showNotificationsTab.checkbox.isChecked = !showNotificationsTab.checkbox.isChecked
-                if (showNotificationsTab.checkbox.isChecked) {
-                    notificationTypeTab.root.isClickable = true
-                    notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_3))
-                } else {
-                    notificationTypeTab.root.isClickable = false
-                    notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_2))
-                }
-            }
-            notificationTypeTab.tabTitle.text = getString(R.string.lbl_notification_type_tab)
-            notificationTypeTab.tabOption.text = getString(R.string.lbl_simple_notification)
-
-            temperatureUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.TEMPERATURE) }
-            lengthUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.LENGTH) }
-            speedUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.SPEED) }
-            distanceUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.DISTANCE) }
-            pressureUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.PRESSURE) }
-            windDirectionFormatTab.root.setOnClickListener { showSettingDialog(SettingType.WIND_DIRECTION_FORMAT) }
-            notificationTypeTab.root.setOnClickListener { showSettingDialog(SettingType.NOTIFICATION) }
-
-            if (showNotificationsTab.checkbox.isChecked) {
-                notificationTypeTab.root.isClickable = true
+            showNotificationsTab.tabTitle.text = getString(SettingType.SHOW_NOTIFICATION.resourceId)
+            notificationTypeTab.tabTitle.text = getString(SettingType.NOTIFICATION.resourceId)
+            if (settings.showNotification) {
+                notificationTypeTab.root.isEnabled = true
                 notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_3))
             } else {
-                notificationTypeTab.root.isClickable = false
+                notificationTypeTab.root.isEnabled = false
                 notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_2))
             }
         }
     }
 
-    private fun showSettingDialog(settingType: SettingType) {
+    private fun setSettingTabsClickListener(settings: Settings) {
+        binding.apply {
+            appBar.backButton.setOnClickListener { findNavController().navigateUp() }
+            detectLocationTab.root.setOnClickListener {
+                detectLocationTab.checkbox.isChecked = !detectLocationTab.checkbox.isChecked
+                settingsViewModel.saveDetectLocation(detectLocationTab.checkbox.isChecked, requireContext())
+            }
+            hoursFormatTab.root.setOnClickListener {
+                hoursFormatTab.checkbox.isChecked = !hoursFormatTab.checkbox.isChecked
+                settingsViewModel.saveHourFormat(hoursFormatTab.checkbox.isChecked, requireContext())
+            }
+            showNotificationsTab.root.setOnClickListener {
+                showNotificationsTab.checkbox.isChecked = !showNotificationsTab.checkbox.isChecked
+                settingsViewModel.saveShowNotification(showNotificationsTab.checkbox.isChecked, requireContext())
+                if (showNotificationsTab.checkbox.isChecked) {
+                    notificationTypeTab.root.isEnabled = true
+                    notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_3))
+                } else {
+                    notificationTypeTab.root.isEnabled = false
+                    notificationTypeTab.tabOption.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_2))
+                }
+            }
+            temperatureUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.TEMPERATURE, settings) }
+            lengthUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.LENGTH, settings) }
+            speedUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.SPEED, settings) }
+            distanceUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.DISTANCE, settings) }
+            pressureUnitsTab.root.setOnClickListener { showSettingDialog(SettingType.PRESSURE, settings) }
+            windDirectionFormatTab.root.setOnClickListener { showSettingDialog(SettingType.WIND_DIRECTION_FORMAT, settings) }
+            notificationTypeTab.root.setOnClickListener { showSettingDialog(SettingType.NOTIFICATION, settings) }
+        }
+    }
+
+    private fun showSettingDialog(settingType: SettingType, settings: Settings) {
         val alertDialog = AlertDialog.Builder(requireContext(), R.style.SettingsDialogTheme)
-        alertDialog.setTitle(getSettingsDialogTitle(settingType))
+        alertDialog.setTitle(getString(settingType.resourceId))
         alertDialog.setNegativeButton(getString(R.string.lbl_cancel_button)) { _, _ -> }
+
         val settingItems = getSettingsDialogItems(settingType)
-        alertDialog.setSingleChoiceItems(settingItems, 1) { _, _ -> }
+        val checkedPosition = getSettingsDialogCheckedPosition(settingType, settings, settingItems)
+
+        alertDialog.setSingleChoiceItems(settingItems, checkedPosition) { dialog, position ->
+            setSettingsDialogClickListener(dialog, settingItems[position])
+        }
+
         val alert = alertDialog.create()
         alert.show()
     }
 
-    private fun getSettingsDialogTitle(settingType: SettingType): String {
+    private fun setSettingsDialogClickListener(dialog: DialogInterface, option: String) {
+        when (option) {
+            getString(TemperatureType.CELSIUS.resourceId) -> {
+                settingsViewModel.saveTemperatureUnit(TEMPERATURE_CELSIUS, requireContext())
+            }
+            getString(TemperatureType.FAHRENHEIT.resourceId) -> {
+                settingsViewModel.saveTemperatureUnit(TEMPERATURE_FAHRENHEIT, requireContext())
+            }
+            getString(TemperatureType.KELVIN.resourceId) -> {
+                settingsViewModel.saveTemperatureUnit(TEMPERATURE_KELVIN, requireContext())
+            }
+            getString(LengthType.MILLIMETERS.resourceId) -> {
+                settingsViewModel.saveLengthUnit(LENGTH_MILLIMETERS, requireContext())
+            }
+            getString(LengthType.INCHES.resourceId) -> {
+                settingsViewModel.saveLengthUnit(LENGTH_INCHES, requireContext())
+            }
+            getString(SpeedType.METERS_PER_SECOND.resourceId) -> {
+                settingsViewModel.saveSpeedUnit(SPEED_METERS, requireContext())
+            }
+            getString(SpeedType.KILOMETERS_PER_HOUR.resourceId) -> {
+                settingsViewModel.saveSpeedUnit(SPEED_KILOMETERS, requireContext())
+            }
+            getString(SpeedType.MILES_PER_HOUR.resourceId) -> {
+                settingsViewModel.saveSpeedUnit(SPEED_MILES, requireContext())
+            }
+            getString(SpeedType.BEAUFORT_WIND_SCALE.resourceId) -> {
+                settingsViewModel.saveSpeedUnit(SPEED_BEAUFORT, requireContext())
+            }
+            getString(SpeedType.KNOTS.resourceId) -> {
+                settingsViewModel.saveSpeedUnit(SPEED_KNOTS, requireContext())
+            }
+            getString(DistanceType.KILOMETERS.resourceId) -> {
+                settingsViewModel.saveDistanceUnit(DISTANCE_KM, requireContext())
+            }
+            getString(DistanceType.MILES.resourceId) -> {
+                settingsViewModel.saveDistanceUnit(DISTANCE_MI, requireContext())
+            }
+            getString(PressureType.HPA.resourceId) -> {
+                settingsViewModel.savePressureUnit(PRESSURE_HPA, requireContext())
+            }
+            getString(PressureType.KPA.resourceId) -> {
+                settingsViewModel.savePressureUnit(PRESSURE_KPA, requireContext())
+            }
+            getString(PressureType.MMHG.resourceId) -> {
+                settingsViewModel.savePressureUnit(PRESSURE_MMHG, requireContext())
+            }
+            getString(PressureType.INHG.resourceId) -> {
+                settingsViewModel.savePressureUnit(PRESSURE_INHG, requireContext())
+            }
+            getString(WindDirectionType.NO_INDICATION.resourceId) -> {
+                settingsViewModel.saveWindDirection(WIND_DIRECTION_NO_INDICATION, requireContext())
+            }
+            getString(WindDirectionType.ARROWS.resourceId) -> {
+                settingsViewModel.saveWindDirection(WIND_DIRECTION_ARROWS, requireContext())
+            }
+            getString(WindDirectionType.ABBREVIATIONS.resourceId) -> {
+                settingsViewModel.saveWindDirection(WIND_DIRECTION_ABBREVIATIONS, requireContext())
+            }
+            getString(NotificationType.DEFAULT.resourceId) -> {
+                settingsViewModel.saveNotificationType(NOTIFICATION_TYPE_DEFAULT, requireContext())
+            }
+            getString(NotificationType.SIMPLE.resourceId) -> {
+                settingsViewModel.saveNotificationType(NOTIFICATION_TYPE_SIMPLE, requireContext())
+            }
+        }
+        dialog.cancel()
+    }
+
+    private fun getSettingsDialogCheckedPosition(settingType: SettingType, settings: Settings, settingItems: Array<String>): Int {
         return when (settingType) {
             SettingType.TEMPERATURE -> {
-                getString(R.string.lbl_temperature_units_tab)
+                settingItems.indexOf(getString(TemperatureType.getByTemperatureType(settings.temperatureUnit).resourceId))
             }
             SettingType.LENGTH -> {
-                getString(R.string.lbl_length_units_tab)
+                settingItems.indexOf(getString(LengthType.getByLengthType(settings.lengthUnit).resourceId))
             }
             SettingType.SPEED -> {
-                getString(R.string.lbl_speed_units_tab)
+                settingItems.indexOf(getString(SpeedType.getBySpeedType(settings.speedUnit).resourceId))
             }
             SettingType.DISTANCE -> {
-                getString(R.string.lbl_distance_units_tab)
+                settingItems.indexOf(getString(DistanceType.getByDistanceType(settings.distanceUnit).resourceId))
             }
             SettingType.PRESSURE -> {
-                getString(R.string.lbl_pressure_units_tab)
+                settingItems.indexOf(getString(PressureType.getByPressureType(settings.pressureUnit).resourceId))
             }
             SettingType.WIND_DIRECTION_FORMAT -> {
-                getString(R.string.lbl_wind_direction_format_tab)
+                settingItems.indexOf(getString(WindDirectionType.getByWindDirectionType(settings.windDirection).resourceId))
             }
             SettingType.NOTIFICATION -> {
-                getString(R.string.lbl_notification_type_tab)
+                settingItems.indexOf(getString(NotificationType.getByNotificationType(settings.notificationType).resourceId))
+            }
+            SettingType.DETECT_LOCATION -> {
+                settingItems.lastIndex
+            }
+            SettingType.HOUR_FORMAT -> {
+                settingItems.lastIndex
+            }
+            SettingType.SHOW_NOTIFICATION -> {
+                settingItems.lastIndex
             }
         }
     }
@@ -123,54 +267,56 @@ class SettingsFragment : Fragment() {
         return when (settingType) {
             SettingType.TEMPERATURE -> {
                 arrayOf(
-                    getString(R.string.lbl_celsius),
-                    getString(R.string.lbl_fahrenheit),
-                    getString(R.string.lbl_kelvin)
+                    getString(TemperatureType.CELSIUS.resourceId),
+                    getString(TemperatureType.FAHRENHEIT.resourceId),
+                    getString(TemperatureType.KELVIN.resourceId)
                 )
             }
             SettingType.LENGTH -> {
                 arrayOf(
-                    getString(R.string.lbl_millimeters),
-                    getString(R.string.lbl_inches)
+                    getString(LengthType.MILLIMETERS.resourceId),
+                    getString(LengthType.INCHES.resourceId)
                 )
             }
             SettingType.SPEED -> {
                 arrayOf(
-                    getString(R.string.lbl_meters),
-                    getString(R.string.lbl_kilometers),
-                    getString(R.string.lbl_miles),
-                    getString(R.string.lbl_beaufort),
-                    getString(R.string.lbl_knots)
+                    getString(SpeedType.METERS_PER_SECOND.resourceId),
+                    getString(SpeedType.KILOMETERS_PER_HOUR.resourceId),
+                    getString(SpeedType.MILES_PER_HOUR.resourceId),
+                    getString(SpeedType.BEAUFORT_WIND_SCALE.resourceId),
+                    getString(SpeedType.KNOTS.resourceId)
                 )
             }
             SettingType.DISTANCE -> {
                 arrayOf(
-                    getString(R.string.lbl_km),
-                    getString(R.string.lbl_mi)
+                    getString(DistanceType.KILOMETERS.resourceId),
+                    getString(DistanceType.MILES.resourceId)
                 )
             }
             SettingType.PRESSURE -> {
                 arrayOf(
-                    getString(R.string.lbl_hpa),
-                    getString(R.string.lbl_kpa),
-                    getString(R.string.lbl_mm_hg),
-                    getString(R.string.lbl_in_hg)
+                    getString(PressureType.HPA.resourceId),
+                    getString(PressureType.KPA.resourceId),
+                    getString(PressureType.MMHG.resourceId),
+                    getString(PressureType.INHG.resourceId)
                 )
             }
             SettingType.WIND_DIRECTION_FORMAT -> {
                 arrayOf(
-                    getString(R.string.lbl_no_indications),
-                    getString(R.string.lbl_arrows),
-                    getString(R.string.lbl_abbreviations)
+                    getString(WindDirectionType.NO_INDICATION.resourceId),
+                    getString(WindDirectionType.ARROWS.resourceId),
+                    getString(WindDirectionType.ABBREVIATIONS.resourceId)
                 )
             }
             SettingType.NOTIFICATION -> {
                 arrayOf(
-                    getString(R.string.lbl_default_android_view),
-                    getString(R.string.lbl_simple_notification)
+                    getString(NotificationType.DEFAULT.resourceId),
+                    getString(NotificationType.SIMPLE.resourceId)
                 )
             }
+            SettingType.DETECT_LOCATION -> arrayOf()
+            SettingType.HOUR_FORMAT -> arrayOf()
+            SettingType.SHOW_NOTIFICATION -> arrayOf()
         }
     }
-
 }
