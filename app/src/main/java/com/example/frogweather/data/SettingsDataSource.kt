@@ -37,15 +37,15 @@ class SettingsDataSource(context: Context) {
             }
         }
         .map { preferences ->
-            val detectLocation = preferences[DETECT_LOCATION] ?: DETECT_LOCATION_FALSE
-            val hourFormatUnit = preferences[HOUR_FORMAT] ?: HOUR_FORMAT_FALSE
+            val detectLocation = preferences[DETECT_LOCATION] ?: false
+            val hourFormatUnit = preferences[HOUR_FORMAT] ?: false
             val temperatureUnit = preferences[TEMPERATURE_UNIT] ?: TEMPERATURE_CELSIUS
             val lengthUnit = preferences[LENGTH_UNIT] ?: LENGTH_MILLIMETERS
             val speedUnit = preferences[SPEED_UNIT] ?: SPEED_METERS
             val distanceUnit = preferences[DISTANCE_UNIT] ?: DISTANCE_KM
             val pressureUnit = preferences[PRESSURE_UNIT] ?: PRESSURE_MMHG
             val windDirection = preferences[WIND_DIRECTION] ?: WIND_DIRECTION_ARROWS
-            val showNotification = preferences[SHOW_NOTIFICATION] ?: SHOW_NOTIFICATION_FALSE
+            val showNotification = preferences[SHOW_NOTIFICATION] ?: false
             val notificationType = preferences[NOTIFICATION_TYPE] ?: NOTIFICATION_TYPE_SIMPLE
 
             Settings(
