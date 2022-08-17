@@ -25,7 +25,7 @@
     <string name="lbl_distance_units_tab">Distance units</string>
     <string name="lbl_pressure_units_tab">Pressure units</string>
     <string name="lbl_wind_direction_format_tab">Wind direction format</string>
-    <string name="lbl_weather_notification_tab">Show weather in notification</string>
+    <string name="lbl_show_notification_tab">Show weather in notification</string>
     <string name="lbl_notification_type_tab">Notification type</string>
 
     <!--  SETTINGS TAB OPTIONS  -->

@@ -1,11 +1,13 @@
 package com.example.frogweather.data
 
-enum class DistanceType(val distanceType: Int) {
-    KILOMETERS(0),
-    MILES(1);
+import com.example.frogweather.R
+
+enum class DistanceType(val distanceType: String, val resourceId: Int) {
+    KILOMETERS(DISTANCE_KM, R.string.lbl_km),
+    MILES(DISTANCE_MI, R.string.lbl_mi);
 
     companion object {
-        fun getByDistanceType(distanceType: Int) =
+        fun getByDistanceType(distanceType: String) =
             values().firstOrNull { it.distanceType == distanceType } ?: KILOMETERS
     }
 }

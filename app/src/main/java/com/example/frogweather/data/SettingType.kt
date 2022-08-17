@@ -1,16 +1,16 @@
 package com.example.frogweather.data
 
-enum class SettingType(val settingType: Int) {
-    TEMPERATURE(0),
-    LENGTH(1),
-    SPEED(2),
-    DISTANCE(3),
-    PRESSURE(4),
-    WIND_DIRECTION_FORMAT(5),
-    NOTIFICATION(6);
+import com.example.frogweather.R
 
-    companion object {
-        fun getBySettingType(settingType: Int) =
-            values().firstOrNull { it.settingType == settingType } ?: TEMPERATURE
-    }
+enum class SettingType(val resourceId: Int) {
+    DETECT_LOCATION(R.string.lbl_detect_location_tab),
+    HOUR_FORMAT(R.string.lbl_hour_format_tab),
+    TEMPERATURE(R.string.lbl_temperature_units_tab),
+    LENGTH(R.string.lbl_length_units_tab),
+    SPEED(R.string.lbl_speed_units_tab),
+    DISTANCE(R.string.lbl_distance_units_tab),
+    PRESSURE(R.string.lbl_pressure_units_tab),
+    WIND_DIRECTION_FORMAT(R.string.lbl_wind_direction_format_tab),
+    SHOW_NOTIFICATION(R.string.lbl_show_notification_tab),
+    NOTIFICATION(R.string.lbl_notification_type_tab);
 }
