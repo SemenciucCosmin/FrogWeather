@@ -17,7 +17,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface FrogWeatherApiService {
-    @GET(WEATHER_API_PATH_URL)
+    @GET("/data/2.5/forecast?units=metric")
     suspend fun getForecast(@Query("lat") lat: Double, @Query("lon") lon: Double, @Query("dt") dt: Long, @Query("appid") appid: String): Forecast
 }
 

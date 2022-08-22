@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
@@ -52,19 +53,16 @@ class MainActivity : AppCompatActivity() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         when {
-            ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED -> {
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED -> {
                 updateLocation()
             }
-            shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION) -> {
-                showRequestPermissionDialog()
+            Build.VERSION.SDK_INT > Build.VERSION_CODES.M -> {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                    showRequestPermissionDialog()
+                }
             }
             else -> {
-                requestPermissionLauncher.launch(
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                )
+                requestPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
             }
         }
     }
@@ -75,14 +73,12 @@ class MainActivity : AppCompatActivity() {
         alertDialog.setMessage(getString(R.string.msg_location_permisson_dialog))
         alertDialog.setNegativeButton(getString(R.string.lbl_cancel_button)) { _, _ -> }
         alertDialog.setPositiveButton(getString(R.string.lbl_settings_button)) { _, _ ->
-            val intent = Intent()
-            intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
             val uri = Uri.fromParts("package", packageName, null)
             intent.data = uri
             startActivity(intent)
         }
-        val alert = alertDialog.create()
-        alert.show()
+        alertDialog.create().show()
     }
 
     private fun updateLocation() {

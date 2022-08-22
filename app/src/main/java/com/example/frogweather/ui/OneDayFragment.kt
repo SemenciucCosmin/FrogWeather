@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.example.frogweather.data.MILLIS_ARGUMENT_KEY
 import com.example.frogweather.databinding.FragmentOneDayBinding
 
 class OneDayFragment : Fragment() {
@@ -31,7 +32,7 @@ class OneDayFragment : Fragment() {
         fun newInstance(millis: Long) : Fragment {
             return OneDayFragment().apply {
                 arguments = Bundle().apply {
-                    putLong("key", millis)
+                    putLong(MILLIS_ARGUMENT_KEY, millis)
                 }
             }
         }
