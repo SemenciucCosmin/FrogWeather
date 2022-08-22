@@ -8,15 +8,34 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.frogweather.data.LOCATION_UPDATE_INTERVAL
+import com.example.frogweather.data.MINUTES_DIVIDER
 import com.example.frogweather.data.Settings
 import com.example.frogweather.data.SettingsDataSource
 import com.example.frogweather.data.SettingsRepository
+import com.example.frogweather.data.MyLocation
 import kotlinx.coroutines.launch
 
 class SettingsViewModel(application: Application) : AndroidViewModel(application) {
     private val settingsRepository = SettingsRepository(SettingsDataSource(application))
 
-    fun getSettings(): LiveData<Settings> = settingsRepository.getSettings().asLiveData()
+    fun getSettings(): LiveData<Settings> {
+        return settingsRepository.getSettings().asLiveData()
+    }
+
+    fun getLocation(): LiveData<MyLocation> = settingsRepository.getLocation().asLiveData()
+
+
+    fun saveLocation(location: MyLocation, context: Context) {
+        viewModelScope.launch {
+            settingsRepository.getLocation().collect { oldLocation ->
+                val minutes = (location.millis - oldLocation.millis) / MINUTES_DIVIDER
+                if (minutes > LOCATION_UPDATE_INTERVAL) {
+                    settingsRepository.saveLocationToPreferenceStore(location, context)
+                }
+            }
+        }
+    }
 
     fun saveDetectLocation(detectLocation: Boolean, context: Context) {
         viewModelScope.launch { settingsRepository.saveDetectLocationToPreferenceStore(detectLocation, context) }

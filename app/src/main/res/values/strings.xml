@@ -57,5 +57,8 @@
     <string name="lbl_detect_location_menu_title">Detect Location</string>
     <string name="lbl_settings_menu_title">Settings</string>
     <string name="lbl_cancel_button">Cancel</string>
+    <string name="lbl_location_settings_dialog_title">Location Settings</string>
+    <string name="lbl_settings_button">settings</string>
+    <string name="msg_location_permisson_dialog">Location is not enabled. Do you wish to go to the settings menu?</string>
 
 </resources>
