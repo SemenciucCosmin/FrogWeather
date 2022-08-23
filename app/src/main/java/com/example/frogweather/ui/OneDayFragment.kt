@@ -29,7 +29,7 @@ class OneDayFragment : Fragment() {
 
 
     companion object {
-        fun newInstance(millis: Long) : Fragment {
+        fun newInstance(millis: Long): Fragment {
             return OneDayFragment().apply {
                 arguments = Bundle().apply {
                     putLong(MILLIS_ARGUMENT_KEY, millis)

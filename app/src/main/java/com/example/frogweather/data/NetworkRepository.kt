@@ -1,15 +1,10 @@
 package com.example.frogweather.data
 
 import java.io.IOException
-import retrofit2.Response
 
 class NetworkRepository {
-    suspend fun getForecast(latitude: Double, longitude: Double, millis: Long): Forecast? {
-        return when (val result = safeApiCall(call = { getForecastCall(latitude, longitude, millis) }, errorMessage = "Exception occurred")) {
-            is CallResult.Success -> result.data
-            is CallResult.Error -> null
-        }
-    }
+    suspend fun getForecast(latitude: Double, longitude: Double, millis: Long) =
+        safeApiCall(call = { getForecastCall(latitude, longitude, millis) }, errorMessage = "Exception occurred")
 
     private suspend fun getForecastCall(latitude: Double, longitude: Double, millis: Long): CallResult<Forecast> {
         val response = FrogWeatherApi.retrofitService.getForecast(latitude, longitude, millis)

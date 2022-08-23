@@ -2,11 +2,13 @@ package com.example.frogweather.ui
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.example.frogweather.data.LOCATION_UPDATE_INTERVAL
 import com.example.frogweather.data.MINUTES_DIVIDER
@@ -25,6 +27,12 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
 
     fun getLocation(): LiveData<MyLocation> {
         return settingsRepository.getLocation().asLiveData()
+    }
+
+    fun shouldUpdateLocation() = liveData {
+        settingsRepository.getLocation().collect { oldLocation ->
+            emit(((System.currentTimeMillis() - oldLocation.millis) / MINUTES_DIVIDER) >= LOCATION_UPDATE_INTERVAL)
+        }
     }
 
     fun saveLocation(location: MyLocation, context: Context) {

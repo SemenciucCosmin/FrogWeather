@@ -8,19 +8,14 @@ import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
-import com.example.frogweather.data.LOCATION_UPDATE_INTERVAL
-import com.example.frogweather.data.MINUTES_DIVIDER
 import com.example.frogweather.databinding.ActivityMainBinding
 import com.example.frogweather.data.MyLocation
-import com.example.frogweather.data.Sys
 import com.example.frogweather.ui.FrogWeatherApplication
 import com.example.frogweather.ui.SettingsViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -57,8 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         when {
             ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED -> {
-                if (shouldUpdateLocation()) {
-                    updateLocation()
+                settingsViewModel.shouldUpdateLocation().observe(this) { shouldUpdate ->
+                    if (shouldUpdate) {
+                        updateLocation()
+                    }
                 }
             }
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
@@ -83,14 +80,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         alertDialog.create().show()
-    }
-
-    private fun shouldUpdateLocation(): Boolean {
-        var shouldUpdate = false
-        settingsViewModel.getLocation().observe(this) { oldLocation ->
-            shouldUpdate = ((System.currentTimeMillis() - oldLocation.millis) / MINUTES_DIVIDER) >= LOCATION_UPDATE_INTERVAL
-        }
-        return shouldUpdate
     }
 
     private fun updateLocation() {
