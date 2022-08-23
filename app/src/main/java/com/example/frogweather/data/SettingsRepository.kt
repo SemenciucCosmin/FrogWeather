@@ -7,6 +7,12 @@ class SettingsRepository(private val settingsDataSource: SettingsDataSource) {
 
     fun getSettings(): Flow<Settings> = settingsDataSource.settingsFlow
 
+    fun getLocation(): Flow<MyLocation> = settingsDataSource.locationFlow
+
+    suspend fun saveLocationToPreferenceStore(location: MyLocation, context: Context){
+        settingsDataSource.saveLocationToPreferenceStore(location, context)
+    }
+
     suspend fun saveDetectLocationToPreferenceStore(detectLocation: Boolean, context: Context) {
         settingsDataSource.saveDetectLocationToPreferenceStore(detectLocation, context)
     }

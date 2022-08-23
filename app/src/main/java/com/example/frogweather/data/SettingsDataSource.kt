@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.doublePreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import java.io.IOException
@@ -26,6 +28,9 @@ class SettingsDataSource(context: Context) {
     private val WIND_DIRECTION = stringPreferencesKey("wind_direction")
     private val SHOW_NOTIFICATION = booleanPreferencesKey("show_notification")
     private val NOTIFICATION_TYPE = stringPreferencesKey("notification_type")
+    private val LATITUDE = doublePreferencesKey("latitude")
+    private val LONGITUDE = doublePreferencesKey("longitude")
+    private val LAST_LOCATION_UPDATE = longPreferencesKey("last_location_update")
 
     val settingsFlow: Flow<Settings> = context.dataStore.data
         .catch {
@@ -38,12 +43,12 @@ class SettingsDataSource(context: Context) {
         }
         .map { preferences ->
             val detectLocation = preferences[DETECT_LOCATION] ?: false
-            val hourFormatUnit = preferences[HOUR_FORMAT] ?: false
+            val hourFormatUnit = preferences[HOUR_FORMAT] ?: true
             val temperatureUnit = preferences[TEMPERATURE_UNIT] ?: TEMPERATURE_CELSIUS
             val lengthUnit = preferences[LENGTH_UNIT] ?: LENGTH_MILLIMETERS
             val speedUnit = preferences[SPEED_UNIT] ?: SPEED_METERS
             val distanceUnit = preferences[DISTANCE_UNIT] ?: DISTANCE_KM
-            val pressureUnit = preferences[PRESSURE_UNIT] ?: PRESSURE_MMHG
+            val pressureUnit = preferences[PRESSURE_UNIT] ?: PRESSURE_HPA
             val windDirection = preferences[WIND_DIRECTION] ?: WIND_DIRECTION_ARROWS
             val showNotification = preferences[SHOW_NOTIFICATION] ?: false
             val notificationType = preferences[NOTIFICATION_TYPE] ?: NOTIFICATION_TYPE_SIMPLE
@@ -61,6 +66,30 @@ class SettingsDataSource(context: Context) {
                 notificationType
             )
         }
+
+    val locationFlow: Flow<MyLocation> = context.dataStore.data
+        .catch {
+            if (it is IOException) {
+                it.printStackTrace()
+                emit(emptyPreferences())
+            } else {
+                throw it
+            }
+        }
+        .map { preferences ->
+            val latitude = preferences[LATITUDE] ?: DEFAULT_COORDINATE
+            val longitude = preferences[LONGITUDE] ?: DEFAULT_COORDINATE
+            val millis = preferences[LAST_LOCATION_UPDATE] ?: DEFAULT_MILLIS
+            MyLocation(millis, latitude, longitude)
+        }
+
+    suspend fun saveLocationToPreferenceStore(location: MyLocation, context: Context) {
+        context.dataStore.edit { preferences ->
+            preferences[LATITUDE] = location.latitude
+            preferences[LONGITUDE] = location.longitude
+            preferences[LAST_LOCATION_UPDATE] = location.millis
+        }
+    }
 
     suspend fun saveDetectLocationToPreferenceStore(detectLocation: Boolean, context: Context) {
         context.dataStore.edit { preferences ->
