@@ -28,14 +28,7 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
     }
 
     fun saveLocation(location: MyLocation, context: Context) {
-        viewModelScope.launch {
-            settingsRepository.getLocation().collect { oldLocation ->
-                val minutes = (location.millis - oldLocation.millis) / MINUTES_DIVIDER
-                if (minutes > LOCATION_UPDATE_INTERVAL) {
-                    settingsRepository.saveLocationToPreferenceStore(location, context)
-                }
-            }
-        }
+        viewModelScope.launch { settingsRepository.saveLocationToPreferenceStore(location, context) }
     }
 
     fun saveDetectLocation(detectLocation: Boolean, context: Context) {

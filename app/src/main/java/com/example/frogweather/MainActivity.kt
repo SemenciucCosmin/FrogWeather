@@ -15,6 +15,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.frogweather.data.LOCATION_UPDATE_INTERVAL
+import com.example.frogweather.data.MINUTES_DIVIDER
 import com.example.frogweather.databinding.ActivityMainBinding
 import com.example.frogweather.data.MyLocation
 import com.example.frogweather.data.Sys
@@ -54,7 +57,9 @@ class MainActivity : AppCompatActivity() {
 
         when {
             ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED -> {
-                updateLocation()
+                if (shouldUpdateLocation()) {
+                    updateLocation()
+                }
             }
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
                 if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -78,6 +83,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         alertDialog.create().show()
+    }
+
+    private fun shouldUpdateLocation(): Boolean {
+        var shouldUpdate = false
+        settingsViewModel.getLocation().observe(this) { oldLocation ->
+            shouldUpdate = ((System.currentTimeMillis() - oldLocation.millis) / MINUTES_DIVIDER) >= LOCATION_UPDATE_INTERVAL
+        }
+        return shouldUpdate
     }
 
     private fun updateLocation() {
