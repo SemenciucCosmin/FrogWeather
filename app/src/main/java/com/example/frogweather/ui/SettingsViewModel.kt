@@ -23,6 +23,10 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
         return settingsRepository.getSettings().asLiveData()
     }
 
+    fun getLocation(): LiveData<MyLocation> {
+        return settingsRepository.getLocation().asLiveData()
+    }
+
     fun saveLocation(location: MyLocation, context: Context) {
         viewModelScope.launch {
             settingsRepository.getLocation().collect { oldLocation ->

@@ -6,7 +6,7 @@ data class Day(
     @Json(name = "dt")
     val dt: Int = 0,
     @Json(name = "main")
-    val main: Main,
+    val measurements: Measurements,
     @Json(name = "weather")
     val weather: List<Weather>?,
     @Json(name = "clouds")

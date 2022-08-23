@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED -> {
                 updateLocation()
             }
-            Build.VERSION.SDK_INT > Build.VERSION_CODES.M -> {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
                 if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)) {
                     showRequestPermissionDialog()
                 }
@@ -74,8 +74,7 @@ class MainActivity : AppCompatActivity() {
         alertDialog.setNegativeButton(getString(R.string.lbl_cancel_button)) { _, _ -> }
         alertDialog.setPositiveButton(getString(R.string.lbl_settings_button)) { _, _ ->
             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            val uri = Uri.fromParts("package", packageName, null)
-            intent.data = uri
+            intent.data = Uri.fromParts("package", packageName, null)
             startActivity(intent)
         }
         alertDialog.create().show()

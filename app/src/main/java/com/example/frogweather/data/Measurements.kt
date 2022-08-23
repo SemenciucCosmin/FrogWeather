@@ -2,7 +2,7 @@ package com.example.frogweather.data
 
 import com.squareup.moshi.Json
 
-data class Main(
+data class Measurements(
     @Json(name = "temp")
     val temp: Double = 0.0,
     @Json(name = "feels_like")
