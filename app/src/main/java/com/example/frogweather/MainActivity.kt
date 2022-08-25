@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     private fun showRequestPermissionDialog() {
         val alertDialog = AlertDialog.Builder(this, R.style.SettingsDialogTheme)
         alertDialog.setTitle(getString(R.string.lbl_location_settings_dialog_title))
-        alertDialog.setMessage(getString(R.string.msg_location_permisson_dialog))
+        alertDialog.setMessage(getString(R.string.lbl_location_permission_dialog))
         alertDialog.setNegativeButton(getString(R.string.lbl_cancel_button)) { _, _ -> }
         alertDialog.setPositiveButton(getString(R.string.lbl_settings_button)) { _, _ ->
             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/precipitation_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/precipitation_title_margin"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_precipitation"
+        android:textColor="@color/black"
+        android:textSize="@dimen/precipitation_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/precipitation_chance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/precipitation_chance_margin_top"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_precipitation_chance"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/precipitation_text_size"
+        app:layout_constraintStart_toStartOf="@id/precipitation_title"
+        app:layout_constraintTop_toBottomOf="@id/precipitation_title" />
+
+    <TextView
+        android:id="@+id/precipitation_volume_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/precipitation_volume_margin_bottom"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_precipitation_volume"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/precipitation_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/precipitation_chance_label" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hourly_precipitation_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/precipitation_hourly_margin_start"
+        android:layout_marginTop="@dimen/precipitation_hourly_margin_top"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/precipitation_chance_label"
+        app:layout_constraintTop_toBottomOf="@id/precipitation_title"
+        tools:listitem="@layout/hourly_precipitation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

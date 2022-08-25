@@ -15,16 +15,25 @@ class NetworkViewModel : ViewModel() {
     }
     val uiState = _uiState
 
-    fun requestForecast(latitude: Double, longitude: Double, millis: Long) {
+    fun requestDailyForecast(latitude: Double, longitude: Double, millis: Long) {
         viewModelScope.launch {
             _uiState.value = _uiState.value?.copy(isLoading = true)
-            when (val result = networkRepository.getForecast(latitude, longitude, millis)) {
+            when (val result = networkRepository.getDailyForecast(latitude, longitude, millis)) {
                 is CallResult.Success -> _uiState.value = _uiState.value?.copy(isLoading = false, forecast = result.data, errorMessage = null)
                 is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = "Connection not available.")
             }
         }
     }
 
+    fun requestHourlyForecast(latitude: Double, longitude: Double) {
+        viewModelScope.launch {
+            _uiState.value = _uiState.value?.copy(isLoading = true)
+            when (val result = networkRepository.getHourlyForecast(latitude, longitude)) {
+                is CallResult.Success -> _uiState.value = _uiState.value?.copy(isLoading = false, forecast = result.data, errorMessage = null)
+                is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = "Connection not available.")
+            }
+        }
+    }
 }
 
 data class UIState(

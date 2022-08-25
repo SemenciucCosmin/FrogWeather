@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/blue_2"
         android:theme="@style/Theme.TabLayout.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -32,14 +33,16 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/blue_2"
             app:tabGravity="center"
             app:tabRippleColor="@color/dark_inactive_text"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/dark_inactive_text"
-            app:tabIndicatorColor="@color/white">
+            app:tabIndicatorColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            app:tabUnboundedRipple="false">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
