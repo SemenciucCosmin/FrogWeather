@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/hourly_precipitation_padding">
+
+    <TextView
+        android:id="@+id/precipitation_chance_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/precipitation_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="27%" />
+
+    <ImageView
+        android:id="@+id/precipitation_icon"
+        android:layout_width="@dimen/hourly_precipitation_icon_size"
+        android:layout_height="@dimen/hourly_precipitation_icon_size"
+        android:layout_marginTop="@dimen/hourly_precipitation_margin"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/precipitation_chance_value"
+        tools:src="@drawable/ic_precipitation_level_2" />
+
+    <TextView
+        android:id="@+id/precipitation_volume_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/hourly_precipitation_margin"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/cyan2"
+        android:textSize="@dimen/hourly_precipitation_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/precipitation_icon"
+        tools:text="0.1" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/hourly_precipitation_margin"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/black"
+        android:textSize="@dimen/hourly_precipitation_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/precipitation_volume_value"
+        tools:text="12:00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

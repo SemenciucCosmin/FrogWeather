@@ -3,18 +3,36 @@ package com.example.frogweather.data
 import java.io.IOException
 
 class NetworkRepository {
-    suspend fun getForecast(latitude: Double, longitude: Double, millis: Long) =
-        safeApiCall(call = { getForecastCall(latitude, longitude, millis) }, errorMessage = "Exception occurred")
+    suspend fun getDailyForecast(latitude: Double, longitude: Double, millis: Long) =
+        safeApiCall(call = { getDailyForecastCall(latitude, longitude, millis) }, errorMessage = "Exception occurred")
 
-    private suspend fun getForecastCall(latitude: Double, longitude: Double, millis: Long): CallResult<Forecast> {
-        val response = FrogWeatherApi.retrofitService.getForecast(latitude, longitude, millis)
+    suspend fun getHourlyForecast(latitude: Double, longitude: Double) =
+        safeApiCall(call = { getHourlyForecastCall(latitude, longitude) }, errorMessage = "Exception occurred")
+
+    private suspend fun getDailyForecastCall(latitude: Double, longitude: Double, millis: Long): CallResult<Forecast> {
+        val response = FrogWeatherApi.dailyForecastRetrofitService.getDailyForecast(latitude, longitude, millis)
         return if (!response.isSuccessful) {
             CallResult.Error(Exception(response.errorBody().toString()))
         } else {
-            if (response.body() == null) {
+            val body = response.body()
+            if (body == null) {
                 CallResult.Error(Exception("Response body cannot be null."))
             } else {
-                CallResult.Success(response.body()!!)
+                CallResult.Success(body)
+            }
+        }
+    }
+
+    private suspend fun getHourlyForecastCall(latitude: Double, longitude: Double): CallResult<Forecast> {
+        val response = FrogWeatherApi.hourlyForecastRetrofitService.getHourlyForecast(latitude, longitude)
+        return if (!response.isSuccessful) {
+            CallResult.Error(Exception(response.errorBody().toString()))
+        } else {
+            val body = response.body()
+            if (body == null) {
+                CallResult.Error(Exception("Response body cannot be null."))
+            } else {
+                CallResult.Success(body)
             }
         }
     }

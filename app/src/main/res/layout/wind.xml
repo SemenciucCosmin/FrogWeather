@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/wind_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/wind_elements_horizontal_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_wind"
+        android:textColor="@color/black"
+        android:textSize="@dimen/wind_text_size_small"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/wind_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/wind_speed_value_margin_start"
+        android:layout_marginTop="@dimen/wind_elements_vertical_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/cyan2"
+        android:textSize="@dimen/wind_text_size_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wind_title"
+        tools:text="2" />
+
+    <ImageView
+        android:id="@+id/wind_direction"
+        android:layout_width="@dimen/wind_direction_icon_width"
+        android:layout_height="@dimen/wind_direction_icon_height"
+        android:layout_marginStart="@dimen/wind_elements_horizontal_distance"
+        android:layout_marginBottom="@dimen/wind_elements_vertical_distance"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_s"
+        app:layout_constraintBottom_toTopOf="@id/wind_speed_unit"
+        app:layout_constraintStart_toEndOf="@id/wind_value" />
+
+    <TextView
+        android:id="@+id/wind_speed_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/wind_speed_ms"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/wind_text_size_small"
+        app:layout_constraintBottom_toBottomOf="@id/wind_value"
+        app:layout_constraintEnd_toEndOf="@id/wind_direction"
+        app:layout_constraintStart_toStartOf="@id/wind_direction" />
+
+    <TextView
+        android:id="@+id/wind_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/wind_elements_horizontal_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/wind_text_size_medium"
+        app:layout_constraintBottom_toBottomOf="@id/wind_direction"
+        app:layout_constraintStart_toEndOf="@id/wind_direction"
+        tools:text="Light breeze" />
+
+    <TextView
+        android:id="@+id/wind_compass_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/wind_text_size_small"
+        app:layout_constraintBottom_toBottomOf="@id/wind_speed_unit"
+        app:layout_constraintEnd_toEndOf="@id/wind_description"
+        app:layout_constraintStart_toStartOf="@id/wind_description"
+        tools:text="N" />
+
+    <TextView
+        android:id="@+id/wind_gust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/wind_elements_horizontal_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_wind_gust"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/wind_text_size_medium"
+        app:layout_constraintBottom_toBottomOf="@id/wind_description"
+        app:layout_constraintStart_toEndOf="@id/wind_description" />
+
+    <TextView
+        android:id="@+id/wind_gust_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/wind_text_size_small"
+        app:layout_constraintBottom_toBottomOf="@id/wind_compass_direction"
+        app:layout_constraintEnd_toEndOf="@id/wind_gust"
+        app:layout_constraintStart_toStartOf="@id/wind_gust"
+        tools:text="4" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/wind_recycler_view_top_margin"
+        android:id="@+id/hourly_wind_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wind_gust_value"
+        tools:listitem="@layout/hourly_wind" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

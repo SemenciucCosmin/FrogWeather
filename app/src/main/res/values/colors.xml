@@ -16,9 +16,14 @@
     <color name="settings_status_bar">#1E88E4</color>
     <color name="dark_toolbar">#407AC4</color>
 
+    <color name="cyan1">#00FFFE</color>
+    <color name="cyan2">#15C9CA</color>
+
     <color name="gray_1">#DCDCDC</color>
     <color name="gray_2">#A2A2A2</color>
     <color name="gray_3">#757575</color>
+    <color name="gray_4">#86A3AB</color>
+    <color name="gray_5">#6D8FCF</color>
 
     <color name="black_1">#202020</color>
 

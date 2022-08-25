@@ -59,6 +59,34 @@
     <string name="lbl_cancel_button">Cancel</string>
     <string name="lbl_location_settings_dialog_title">Location Settings</string>
     <string name="lbl_settings_button">settings</string>
-    <string name="msg_location_permisson_dialog">Location is not enabled. Do you wish to go to the settings menu?</string>
+    <string name="lbl_location_permission_dialog">Location is not enabled. Do you wish to go to the settings menu?</string>
+
+    <!--  ONE DAY FRAGMENT  -->
+    <string name="lbl_weather_date_time_today">Today, %s %s – %s:%s%s</string>
+    <string name="lbl_weather_date_time_tomorrow">Tomorrow, %s %s – %s:%s%s</string>
+    <string name="lbl_weather_min_max_temperature">Max %s˚ - Min %s˚</string>
+    <string name="lbl_weather_feels_like">Feels like %˚</string>
+    <string name="lbl_weather_current_temperature">%s</string>
+    <string name="lbl_weather_temperature_unit_celsius">˚C</string>
+    <string name="lbl_weather_temperature_unit_fahrenheit">˚F</string>
+    <string name="lbl_weather_temperature_unit_kelvin">K</string>
+    <string name="lbl_weather_state_fog">Fog</string>
+    <string name="lbl_short_precipitation_chance">Chance %s%%</string>
+    <string name="lbl_details">Details</string>
+    <string name="lbl_humidity">Humidity</string>
+    <string name="lbl_dew_point">Dew point</string>
+    <string name="lbl_pressure">Pressure</string>
+    <string name="lbl_uv_index">UV Index</string>
+    <string name="lbl_visibility">Visibility</string>
+    <string name="lbl_precipitation">Precipitation</string>
+    <string name="lbl_precipitation_chance">Chance</string>
+    <string name="lbl_precipitation_volume">Volume \n (%s)</string>
+    <string name="lbl_wind">Wind</string>
+    <string name="wind_speed_ms">m/s</string>
+    <string name="wind_speed_kph">kph</string>
+    <string name="wind_speed_mph">mph</string>
+    <string name="wind_speed_bft">bft</string>
+    <string name="wind_speed_kn">kn</string>
+    <string name="lbl_wind_gust">Gust</string>
 
 </resources>
