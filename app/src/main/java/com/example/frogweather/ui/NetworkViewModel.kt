@@ -3,6 +3,7 @@ package com.example.frogweather.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.frogweather.data.CONNECTION_ERROR_MESSAGE
 import com.example.frogweather.data.CallResult
 import com.example.frogweather.data.NetworkRepository
 import com.example.frogweather.data.Forecast
@@ -20,7 +21,7 @@ class NetworkViewModel : ViewModel() {
             _uiState.value = _uiState.value?.copy(isLoading = true)
             when (val result = networkRepository.getDailyForecast(latitude, longitude, millis)) {
                 is CallResult.Success -> _uiState.value = _uiState.value?.copy(isLoading = false, forecast = result.data, errorMessage = null)
-                is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = "Connection not available.")
+                is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = CONNECTION_ERROR_MESSAGE)
             }
         }
     }
@@ -30,7 +31,7 @@ class NetworkViewModel : ViewModel() {
             _uiState.value = _uiState.value?.copy(isLoading = true)
             when (val result = networkRepository.getHourlyForecast(latitude, longitude)) {
                 is CallResult.Success -> _uiState.value = _uiState.value?.copy(isLoading = false, forecast = result.data, errorMessage = null)
-                is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = "Connection not available.")
+                is CallResult.Error -> _uiState.value = _uiState.value?.copy(isLoading = false, errorMessage = CONNECTION_ERROR_MESSAGE)
             }
         }
     }

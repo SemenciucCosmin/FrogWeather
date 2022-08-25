@@ -14,10 +14,11 @@ class NetworkRepository {
         return if (!response.isSuccessful) {
             CallResult.Error(Exception(response.errorBody().toString()))
         } else {
-            if (response.body() == null) {
+            val body = response.body()
+            if (body == null) {
                 CallResult.Error(Exception("Response body cannot be null."))
             } else {
-                CallResult.Success(response.body()!!)
+                CallResult.Success(body)
             }
         }
     }
@@ -27,10 +28,11 @@ class NetworkRepository {
         return if (!response.isSuccessful) {
             CallResult.Error(Exception(response.errorBody().toString()))
         } else {
-            if (response.body() == null) {
+            val body = response.body()
+            if (body == null) {
                 CallResult.Error(Exception("Response body cannot be null."))
             } else {
-                CallResult.Success(response.body()!!)
+                CallResult.Success(body)
             }
         }
     }

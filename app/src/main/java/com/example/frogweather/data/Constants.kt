@@ -31,3 +31,4 @@ const val MINUTES_DIVIDER = 60000
 const val MILLIS_ARGUMENT_KEY = "millis"
 const val DEFAULT_API_UNITS = "metric"
 const val CNT_HOURLY_DAYS = 48
+const val CONNECTION_ERROR_MESSAGE = "Connection not available."
