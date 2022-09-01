@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_5"
+    android:padding="@dimen/main_forecast_layout_distance">
+
+    <TextView
+        android:id="@+id/main_forecast_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_forecast_text_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Today, Friday 26 - 10:06AM" />
+
+    <TextView
+        android:id="@+id/main_forecast_min_max_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_forecast_text_distance"
+        android:layout_marginTop="@dimen/main_forecast_text_distance"
+        android:layout_marginBottom="@dimen/main_forecast_text_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_date_time"
+        tools:text="Max 29˚ - Min 17˚ " />
+
+    <TextView
+        android:id="@+id/main_forecast_weather_state_tomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_3"
+        android:layout_marginStart="@dimen/main_forecast_text_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_min_max_temperature"
+        tools:text="Light rain" />
+
+
+    <TextView
+        android:id="@+id/main_forecast_current_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_forecast_text_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_min_max_temperature"
+        tools:text="20" />
+
+    <TextView
+        android:id="@+id/main_forecast_temperature_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/main_forecast_text_size_2"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_3"
+        app:layout_constraintStart_toEndOf="@id/main_forecast_current_temperature"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_min_max_temperature"
+        tools:text="˚C" />
+
+    <ImageView
+        android:id="@+id/main_forecast_weather_icon"
+        android:layout_width="@dimen/main_forecast_icon_size"
+        android:layout_height="@dimen/main_forecast_icon_size"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_date_time"
+        android:src="@drawable/ic_cloudy" />
+
+    <TextView
+        android:id="@+id/main_forecast_weather_state_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/main_forecast_weather_icon"
+        app:layout_constraintStart_toStartOf="@id/main_forecast_weather_icon"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_weather_icon"
+        tools:text="Fog" />
+
+
+    <TextView
+        android:id="@+id/main_forecast_feels_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_forecast_text_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_forecast_text_size_1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_forecast_current_temperature"
+        tools:text="Feels like 20˚" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

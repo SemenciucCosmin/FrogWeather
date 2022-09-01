@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/ten_days_list_item_details_distance">
+
+    <TextView
+        android:id="@+id/details_volume_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_ten_days_details_volume"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_volume_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0.3" />
+
+    <TextView
+        android:id="@+id/details_volume_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:layout_marginHorizontal="@dimen/details_labels_vertical_distance_1"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toEndOf="@id/details_volume_value"
+        app:layout_constraintBottom_toBottomOf="@id/details_volume_value"
+        tools:text="mm" />
+
+    <TextView
+        android:id="@+id/details_wind_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_wind"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_volume_label" />
+
+    <TextView
+        android:id="@+id/details_wind_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_volume_value"
+        app:layout_constraintTop_toBottomOf="@id/details_volume_value"
+        tools:text="2.5" />
+
+    <TextView
+        android:id="@+id/details_wind_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:layout_marginHorizontal="@dimen/details_labels_vertical_distance_1"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toEndOf="@id/details_wind_value"
+        app:layout_constraintBottom_toBottomOf="@id/details_wind_value"
+        tools:text="kn" />
+
+    <ImageView
+        android:id="@+id/details_wind_direction_icon"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginHorizontal="@dimen/details_labels_vertical_distance_1"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/details_pressure_value"
+        app:layout_constraintStart_toEndOf="@id/details_wind_unit"
+        app:layout_constraintTop_toBottomOf="@id/details_volume_value" />
+
+    <TextView
+        android:id="@+id/details_pressure_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_pressure"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_wind_label" />
+
+    <TextView
+        android:id="@+id/details_pressure_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_wind_value"
+        app:layout_constraintTop_toBottomOf="@id/details_wind_value"
+        tools:text="1017 hPa/mBar" />
+
+    <TextView
+        android:id="@+id/details_humidity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_humidity"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_pressure_label" />
+
+    <TextView
+        android:id="@+id/details_humidity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_pressure_value"
+        app:layout_constraintTop_toBottomOf="@id/details_pressure_value"
+        tools:text="88 %" />
+
+    <TextView
+        android:id="@+id/details_sunrise_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_ten_days_details_sunrise"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_humidity_label" />
+
+    <TextView
+        android:id="@+id/details_sunrise_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_humidity_value"
+        app:layout_constraintTop_toBottomOf="@id/details_humidity_value"
+        tools:text="10:11" />
+
+    <TextView
+        android:id="@+id/details_sunset_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_ten_days_details_sunset"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_sunrise_label" />
+
+    <TextView
+        android:id="@+id/details_sunset_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/ten_days_list_item_details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_sunrise_value"
+        app:layout_constraintTop_toBottomOf="@id/details_sunrise_value"
+        tools:text="10:11" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

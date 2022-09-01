@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.frogweather.ui.SettingsFragment"
+        android:name="com.example.frogweather.ui.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/weatherMapFragment"
-        android:name="com.example.frogweather.ui.WeatherMapFragment"
+        android:name="com.example.frogweather.ui.fragments.WeatherMapFragment"
         android:label="fragment_weather_map"
         tools:layout="@layout/fragment_weather_map" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.frogweather.ui.MainFragment"
+        android:name="com.example.frogweather.ui.fragments.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_weatherMapFragment"

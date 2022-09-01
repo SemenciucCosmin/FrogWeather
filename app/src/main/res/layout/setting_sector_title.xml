@@ -8,6 +8,6 @@
     android:paddingStart="@dimen/setting_element_distance"
     android:paddingTop="@dimen/setting_element_distance"
     android:paddingEnd="@dimen/setting_element_distance"
-    android:textColor="@color/settings_toolbar"
-    android:textSize="@dimen/settings_sector_title_size"
+    android:textColor="@color/blue_6"
+    android:textSize="@dimen/settings_title_text_size_1"
     tools:text="@string/lbl_settings_sector_title" />

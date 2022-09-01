@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="@dimen/one_day_section_vertical_distance">
+
+    <TextView
+        android:id="@+id/details_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/details_title_horizontal_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_details"
+        android:textColor="@color/black"
+        android:textSize="@dimen/details_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_humidity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/details_labels_vertical_distance_2"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_humidity"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_title"
+        app:layout_constraintTop_toBottomOf="@id/details_title" />
+
+    <TextView
+        android:id="@+id/details_humidity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/details_values_horizontal_margin"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/details_humidity_label"
+        tools:text="64 %" />
+
+    <TextView
+        android:id="@+id/details_dew_point_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/details_labels_vertical_distance_1"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_dew_point"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_humidity_label"
+        app:layout_constraintTop_toBottomOf="@id/details_humidity_label" />
+
+    <TextView
+        android:id="@+id/details_dew_point_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_humidity_value"
+        app:layout_constraintTop_toTopOf="@id/details_dew_point_label"
+        tools:text="17˚" />
+
+    <TextView
+        android:id="@+id/details_pressure_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/details_labels_vertical_distance_1"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_pressure"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_dew_point_label"
+        app:layout_constraintTop_toBottomOf="@id/details_dew_point_label" />
+
+    <TextView
+        android:id="@+id/details_pressure_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_dew_point_value"
+        app:layout_constraintTop_toTopOf="@id/details_pressure_label"
+        tools:text="1017 hPa/mBar" />
+
+    <TextView
+        android:id="@+id/details_uv_index_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/details_labels_vertical_distance_1"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_uv_index"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_pressure_label"
+        app:layout_constraintTop_toBottomOf="@id/details_pressure_label" />
+
+    <TextView
+        android:id="@+id/details_uv_index_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_pressure_value"
+        app:layout_constraintTop_toTopOf="@id/details_uv_index_label"
+        tools:text="High, 6" />
+
+    <TextView
+        android:id="@+id/details_visibility_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/details_labels_vertical_distance_1"
+        android:layout_marginBottom="@dimen/details_labels_vertical_distance_2"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:text="@string/lbl_visibility"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/details_uv_index_label"
+        app:layout_constraintTop_toBottomOf="@id/details_uv_index_label" />
+
+    <TextView
+        android:id="@+id/details_visibility_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/details_text_size"
+        app:layout_constraintStart_toStartOf="@id/details_uv_index_value"
+        app:layout_constraintTop_toTopOf="@id/details_visibility_label"
+        tools:text="10 km" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

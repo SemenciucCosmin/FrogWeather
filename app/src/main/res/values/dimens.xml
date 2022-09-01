@@ -1,62 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  APPLICATION  -->
     <dimen name="app_icon_size">80dp</dimen>
     <dimen name="app_icon_padding">15sp</dimen>
+
+    <!--  DRAWER  -->
     <dimen name="drawer_title_size">20sp</dimen>
     <dimen name="drawer_header_height">120dp</dimen>
-    <dimen name="back_icon_padding">5dp</dimen>
     <dimen name="drawer_title_margin_start">50dp</dimen>
+
+    <!--  APP BAR  -->
+    <dimen name="app_bar_icon_padding">5dp</dimen>
+
+    <!--  SETTINGS  -->
     <dimen name="setting_element_distance">18dp</dimen>
-    <dimen name="settings_sector_title_size">15sp</dimen>
-    <dimen name="setting_title_text_size">17sp</dimen>
-    <dimen name="line_view_height">1dp</dimen>
-    <dimen name="current_weather_text_size">15sp</dimen>
-    <dimen name="current_weather_text_margin">10dp</dimen>
-    <dimen name="current_weather_temperature_text_size">100sp</dimen>
-    <dimen name="current_weather_temperature_unit_margin">20dp</dimen>
-    <dimen name="current_weather_temperature_unit_text_size">30sp</dimen>
-    <dimen name="current_weather_icon_size">125dp</dimen>
-    <dimen name="current_weather_layout_padding">15dp</dimen>
-    <dimen name="short_precipitation_icon_size">20dp</dimen>
-    <dimen name="short_precipitation_icon_vertical_margin">10dp</dimen>
-    <dimen name="short_precipitation_icon_horizontal_margin">15dp</dimen>
-    <dimen name="short_precipitation_text_size">20sp</dimen>
+    <dimen name="settings_title_text_size_1">15sp</dimen>
+    <dimen name="setting_title_text_size_2">17sp</dimen>
+    <dimen name="settings_line_view_height">1dp</dimen>
+
+    <!--  ONE DAY  -->
+    <dimen name="one_day_section_vertical_distance">10dp</dimen>
+
+    <!--  ONE DAY MAIN FORECAST  -->
+    <dimen name="main_forecast_text_size_1">15sp</dimen>
+    <dimen name="main_forecast_text_size_2">20dp</dimen>
+    <dimen name="main_forecast_text_size_3">30sp</dimen>
+    <dimen name="main_forecast_text_size_4">100sp</dimen>
+    <dimen name="main_forecast_icon_size">125dp</dimen>
+    <dimen name="main_forecast_text_distance">10dp</dimen>
+    <dimen name="main_forecast_layout_distance">15dp</dimen>
+
+    <!--  ONE DAY CHANCE  -->
+    <dimen name="chance_icon_size">20dp</dimen>
+    <dimen name="chance_icon_vertical_distance">10dp</dimen>
+    <dimen name="chance_icon_horizontal_distance">15dp</dimen>
+    <dimen name="chance_text_size">20sp</dimen>
+
+    <!--  ONE DAY DETAILS  -->
     <dimen name="details_text_size">15sp</dimen>
-    <dimen name="details_labels_margin_top">15dp</dimen>
-    <dimen name="details_values_margin_end">30dp</dimen>
-    <dimen name="details_labels_divider">5dp</dimen>
-    <dimen name="details_labels_margin_bottom">15dp</dimen>
-    <dimen name="details_title_margin">20dp</dimen>
-    <dimen name="details_layout_margin">10dp</dimen>
-    <dimen name="hourly_weather_padding">15dp</dimen>
-    <dimen name="hourly_weather_text_size">15sp</dimen>
-    <dimen name="hourly_weather_precipitation_margin">5dp</dimen>
-    <dimen name="hourly_weather_temperature_margin">10dp</dimen>
-    <dimen name="hourly_weather_icon_size">35dp</dimen>
-    <dimen name="hourly_weather_time_margin">5dp</dimen>
-    <dimen name="precipitation_title_margin">20dp</dimen>
+    <dimen name="details_labels_vertical_distance_1">5dp</dimen>
+    <dimen name="details_labels_vertical_distance_2">15dp</dimen>
+    <dimen name="details_values_horizontal_margin">30dp</dimen>
+    <dimen name="details_title_horizontal_distance">20dp</dimen>
+
+    <!--  ONE DAY HOURLY FORECAST ITEM  -->
+    <dimen name="hourly_forecast_item_layout_horizontal_distance">15dp</dimen>
+    <dimen name="hourly_forecast_item_precipitation_vertical_distance">5dp</dimen>
+    <dimen name="hourly_forecast_item_temperature_vertical_distance">10dp</dimen>
+    <dimen name="hourly_forecast_item_time_vertical_distance">5dp</dimen>
+    <dimen name="hourly_forecast_item_text_size_1">15sp</dimen>
+    <dimen name="hourly_forecast_item_text_size_2">17sp</dimen>
+    <dimen name="hourly_forecast_item_icon_size">35dp</dimen>
+
+    <!--  ONE DAY PRECIPITATION  -->
+    <dimen name="precipitation_title_horizontal_distance">20dp</dimen>
     <dimen name="precipitation_text_size">15sp</dimen>
-    <dimen name="precipitation_volume_margin_bottom">15dp</dimen>
-    <dimen name="precipitation_hourly_margin_top">10dp</dimen>
-    <dimen name="precipitation_hourly_margin_start">20dp</dimen>
-    <dimen name="precipitation_chance_margin_top">10dp</dimen>
-    <dimen name="hourly_precipitation_padding">15dp</dimen>
-    <dimen name="hourly_precipitation_text_size">15sp</dimen>
-    <dimen name="hourly_precipitation_icon_size">35dp</dimen>
-    <dimen name="hourly_precipitation_margin">10dp</dimen>
-    <dimen name="wind_text_size_small">15sp</dimen>
-    <dimen name="wind_text_size_large">55sp</dimen>
-    <dimen name="wind_text_size_medium">17sp</dimen>
+    <dimen name="precipitation_volume_vertical_distance">15dp</dimen>
+    <dimen name="precipitation_recycler_view_vertical_distance">10dp</dimen>
+    <dimen name="precipitation_recycler_view_horizontal_distance">20dp</dimen>
+    <dimen name="precipitation_chance_vertical_distance">10dp</dimen>
+
+    <!--  ONE DAY HOURLY PRECIPITATION ITEM  -->
+    <dimen name="hourly_precipitation_item_layout_horizontal_distance">15dp</dimen>
+    <dimen name="hourly_precipitation_item_text_size">15sp</dimen>
+    <dimen name="hourly_precipitation_item_icon_size">35dp</dimen>
+    <dimen name="hourly_precipitation_item_element_vertical_distance">10dp</dimen>
+
+    <!--  ONE DAY WIND  -->
+    <dimen name="wind_text_size_1">15sp</dimen>
+    <dimen name="wind_text_size_2">17sp</dimen>
+    <dimen name="wind_text_size_3">55sp</dimen>
     <dimen name="wind_elements_horizontal_distance">20dp</dimen>
     <dimen name="wind_elements_vertical_distance">10dp</dimen>
-    <dimen name="wind_speed_value_margin_start">25dp</dimen>
-    <dimen name="wind_direction_icon_width">15dp</dimen>
-    <dimen name="wind_direction_icon_height">30dp</dimen>
-    <dimen name="hourly_wind_vertical_margin">5dp</dimen>
-    <dimen name="hourly_wind_text_size">15sp</dimen>
-    <dimen name="hourly_wind_horizontal_padding">10dp</dimen>
-    <dimen name="hourly_wind_default_speed_icon_size">35dp</dimen>
-    <dimen name="wind_recycler_view_top_margin">20dp</dimen>
-    <dimen name="line_view_size">2dp</dimen>
-    <dimen name="wind_layout_top_margin">10dp</dimen>
+    <dimen name="wind_speed_value_horizontal_distance">25dp</dimen>
+    <dimen name="wind_icon_width">15dp</dimen>
+    <dimen name="wind_icon_height">30dp</dimen>
+    <dimen name="wind_recycler_view_vertical_distance">20dp</dimen>
+
+    <!--  ONE DAY HOURLY WIND ITEM  -->
+    <dimen name="hourly_wind_item_element_vertical_distance">5dp</dimen>
+    <dimen name="hourly_wind_item_text_size">15sp</dimen>
+    <dimen name="hourly_wind_item_layout_horizontal_distance">10dp</dimen>
+    <dimen name="hourly_wind_item_speed_icon_size">35dp</dimen>
+
+
+    <!--  TEN DAYS LIST ITEM HEADER  -->
+    <dimen name="ten_days_list_item_header_text_size_1">15sp</dimen>
+    <dimen name="ten_days_list_item_header_text_size_2">17sp</dimen>
+    <dimen name="ten_days_list_item_header_icon_size">40dp</dimen>
+    <dimen name="ten_days_list_item_header_element_horizontal_distance">20dp</dimen>
+
+    <!--  TEN DAYS LIST ITEM DETAILS  -->
+    <dimen name="ten_days_list_item_details_text_size">17sp</dimen>
+    <dimen name="ten_days_list_item_details_distance">10dp</dimen>
+    <dimen name="ten_days_list_item_distance">20dp</dimen>
+
 </resources>
