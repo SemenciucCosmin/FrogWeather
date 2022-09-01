@@ -8,13 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="light_inactive_text">#B0DEFD</color>
-    <color name="dark_inactive_text">#C0D3EA</color>
-    <color name="map_bottom_bar">#61A8E0</color>
-    <color name="blue_2">#1E95F1</color>
-    <color name="settings_toolbar">#2196F3</color>
-    <color name="settings_status_bar">#1E88E4</color>
-    <color name="dark_toolbar">#407AC4</color>
+    <color name="blue_1">#B0DEFD</color>
+    <color name="blue_2">#C0D3EA</color>
+    <color name="blue_3">#6D8FCF</color>
+    <color name="blue_4">#61A8E0</color>
+    <color name="blue_5">#1E95F1</color>
+    <color name="blue_6">#2196F3</color>
+    <color name="blue_7">#1E88E4</color>
+    <color name="blue_8">#6D8FCF</color>
 
     <color name="cyan1">#00FFFE</color>
     <color name="cyan2">#15C9CA</color>
@@ -23,9 +24,10 @@
     <color name="gray_2">#A2A2A2</color>
     <color name="gray_3">#757575</color>
     <color name="gray_4">#86A3AB</color>
-    <color name="gray_5">#6D8FCF</color>
 
     <color name="black_1">#202020</color>
 
     <color name="orange">#FF8800</color>
+
+    <color name="red">#C5090C</color>
 </resources>

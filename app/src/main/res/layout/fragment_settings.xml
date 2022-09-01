@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.SettingsFragment">
+    tools:context=".ui.fragments.SettingsFragment">
 
     <include
-        android:id="@+id/app_bar"
+        android:id="@+id/fragment_settings_app_bar"
         layout="@layout/app_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,109 +21,109 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar">
+        app:layout_constraintTop_toBottomOf="@id/fragment_settings_app_bar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
             <include
-                android:id="@+id/settings_sector_title"
+                android:id="@+id/fragment_settings_sector_title"
                 layout="@layout/setting_sector_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <include
-                android:id="@+id/detect_location_tab"
+                android:id="@+id/fragment_settings_detect_location_tab"
                 layout="@layout/setting_check_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/settings_sector_title" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_sector_title" />
 
             <include
-                android:id="@+id/units_sector_title"
+                android:id="@+id/fragment_settings_units_sector_title"
                 layout="@layout/setting_sector_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/detect_location_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_detect_location_tab" />
 
             <include
-                android:id="@+id/hours_format_tab"
+                android:id="@+id/fragment_settings_hours_format_tab"
                 layout="@layout/setting_check_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/units_sector_title" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_units_sector_title" />
 
             <include
-                android:id="@+id/temperature_units_tab"
+                android:id="@+id/fragment_settings_temperature_units_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hours_format_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_hours_format_tab" />
 
             <include
-                android:id="@+id/length_units_tab"
+                android:id="@+id/fragment_settings_length_units_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/temperature_units_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_temperature_units_tab" />
 
             <include
-                android:id="@+id/speed_units_tab"
+                android:id="@+id/fragment_settings_speed_units_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/length_units_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_length_units_tab" />
 
             <include
-                android:id="@+id/distance_units_tab"
+                android:id="@+id/fragment_settings_distance_units_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/speed_units_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_speed_units_tab" />
 
             <include
-                android:id="@+id/pressure_units_tab"
+                android:id="@+id/fragment_settings_pressure_units_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/distance_units_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_distance_units_tab" />
 
             <include
-                android:id="@+id/display_sector_title"
+                android:id="@+id/fragment_settings_display_sector_title"
                 layout="@layout/setting_sector_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/pressure_units_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_pressure_units_tab" />
 
             <include
-                android:id="@+id/wind_direction_format_tab"
+                android:id="@+id/fragment_settings_wind_direction_format_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/display_sector_title" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_display_sector_title" />
 
             <include
-                android:id="@+id/notification_sector_title"
+                android:id="@+id/fragment_settings_notification_sector_title"
                 layout="@layout/setting_sector_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/wind_direction_format_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_wind_direction_format_tab" />
 
             <include
-                android:id="@+id/show_notifications_tab"
+                android:id="@+id/fragment_settings_show_notifications_tab"
                 layout="@layout/setting_check_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/notification_sector_title" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_notification_sector_title" />
 
             <include
-                android:id="@+id/notification_type_tab"
+                android:id="@+id/fragment_settings_notification_type_tab"
                 layout="@layout/setting_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/show_notifications_tab" />
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_show_notifications_tab" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

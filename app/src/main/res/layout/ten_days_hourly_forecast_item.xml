@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/hourly_forecast_item_layout_horizontal_distance">
+
+    <TextView
+        android:id="@+id/hourly_forecast_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/hourly_forecast_item_precipitation_vertical_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/black"
+        android:textSize="@dimen/hourly_forecast_item_text_size_2"
+        tools:text="21˚" />
+
+    <ImageView
+        android:id="@+id/hourly_forecast_weather_icon"
+        android:layout_width="@dimen/hourly_forecast_item_icon_size"
+        android:layout_height="@dimen/hourly_forecast_item_icon_size"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_cloudy" />
+
+    <TextView
+        android:id="@+id/hourly_forecast_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/hourly_forecast_item_time_vertical_distance"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/hourly_forecast_item_text_size_1"
+        android:textStyle="bold"
+        tools:text="12:00" />
+</LinearLayout>

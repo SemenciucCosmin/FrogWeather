@@ -7,7 +7,7 @@
     <string name="lbl_today_tab">TODAY</string>
 
     <!--  FRAGMENT TITLES  -->
-    <string name="lbl_settings_title">Settings</string>
+    <string name="lbl_settings_fragment_title">Settings</string>
     <string name="lbl_weather_map_fragment_title">Weather Map</string>
 
     <!--  SETTINGS SECTOR TITLES  -->
@@ -61,32 +61,86 @@
     <string name="lbl_settings_button">settings</string>
     <string name="lbl_location_permission_dialog">Location is not enabled. Do you wish to go to the settings menu?</string>
 
-    <!--  ONE DAY FRAGMENT  -->
-    <string name="lbl_weather_date_time_today">Today, %s %s – %s:%s%s</string>
-    <string name="lbl_weather_date_time_tomorrow">Tomorrow, %s %s – %s:%s%s</string>
+    <!--  ONE DAY CURRENT WEATHER  -->
+    <string name="lbl_weather_date_time_today">Today, %s %s – %s</string>
+    <string name="lbl_weather_date_time_tomorrow">Tomorrow, %s %s</string>
     <string name="lbl_weather_min_max_temperature">Max %s˚ - Min %s˚</string>
-    <string name="lbl_weather_feels_like">Feels like %˚</string>
-    <string name="lbl_weather_current_temperature">%s</string>
-    <string name="lbl_weather_temperature_unit_celsius">˚C</string>
-    <string name="lbl_weather_temperature_unit_fahrenheit">˚F</string>
-    <string name="lbl_weather_temperature_unit_kelvin">K</string>
-    <string name="lbl_weather_state_fog">Fog</string>
+    <string name="lbl_temperature_unit_celsius">˚C</string>
+    <string name="lbl_temperature_unit_fahrenheit">˚F</string>
+    <string name="lbl_temperature_unit_kelvin">K</string>
+    <string name="lbl_weather_feels_like">Feels like %s˚</string>
+
+    <!--  ONE DAY HOURLY FORECAST  -->
+    <string name="lbl_hourly_forecast_precipitation">%s%%</string>
+    <string name="lbl_hourly_forecast_temperature">%s˚</string>
+
+    <!-- ONE DAY CHANCE  -->
     <string name="lbl_short_precipitation_chance">Chance %s%%</string>
+
+    <!--  ONE DAY DETAILS  -->
     <string name="lbl_details">Details</string>
     <string name="lbl_humidity">Humidity</string>
     <string name="lbl_dew_point">Dew point</string>
     <string name="lbl_pressure">Pressure</string>
     <string name="lbl_uv_index">UV Index</string>
     <string name="lbl_visibility">Visibility</string>
+    <string name="lbl_humidity_value">%s %%</string>
+    <string name="lbl_pressure_value_hpa">%s hPa/mBar</string>
+    <string name="lbl_pressure_value_kpa">%s kPa</string>
+    <string name="lbl_pressure_value_mmhg">%s mm Hg</string>
+    <string name="lbl_pressure_value_inhg">%s in Hg</string>
+    <string name="lbl_visibility_value_km">%s km</string>
+    <string name="lbl_visibility_value_mi">%s mi</string>
+
+    <!--  ONE DAY PRECIPITATION  -->
     <string name="lbl_precipitation">Precipitation</string>
     <string name="lbl_precipitation_chance">Chance</string>
+    <string name="lbl_length_unit_mm">mm</string>
+    <string name="lbl_length_unit_in">in</string>
     <string name="lbl_precipitation_volume">Volume \n (%s)</string>
+    <string name="lbl_precipitation_chance_value">%s %%</string>
+    <string name="lbl_precipitation_volume_no_value">-</string>
+
+    <!--  ONE DAY WIND  -->
     <string name="lbl_wind">Wind</string>
-    <string name="wind_speed_ms">m/s</string>
-    <string name="wind_speed_kph">kph</string>
-    <string name="wind_speed_mph">mph</string>
-    <string name="wind_speed_bft">bft</string>
-    <string name="wind_speed_kn">kn</string>
+    <string name="lbl_wind_description">Wind description</string>
+    <string name="lbl_wind_speed_mps">m/s</string>
+    <string name="lbl_wind_speed_kph">kph</string>
+    <string name="lbl_wind_speed_mph">mph</string>
+    <string name="lbl_wind_speed_bft">bft</string>
+    <string name="lbl_wind_speed_kn">kn</string>
     <string name="lbl_wind_gust">Gust</string>
+
+    <string name="lbl_direction_n">N</string>
+    <string name="lbl_direction_nne">NNE</string>
+    <string name="lbl_direction_ne">NE</string>
+    <string name="lbl_direction_ene">ENE</string>
+    <string name="lbl_direction_e">E</string>
+    <string name="lbl_direction_ese">ESE</string>
+    <string name="lbl_direction_se">SE</string>
+    <string name="lbl_direction_sse">SSE</string>
+    <string name="lbl_direction_s">S</string>
+    <string name="lbl_direction_ssw">SSW</string>
+    <string name="lbl_direction_sw">SW</string>
+    <string name="lbl_direction_wsw">WSW</string>
+    <string name="lbl_direction_w">W</string>
+    <string name="lbl_direction_wnw">WNW</string>
+    <string name="lbl_direction_nw">NW</string>
+    <string name="lbl_direction_nnw">NNW</string>
+
+
+    <!--  TEN DAYS HEADER  -->
+    <string name="lbl_ten_days_header_date">%s %s</string>
+    <string name="lbl_ten_days_header_chance">%s%%</string>
+    <string name="lbl_ten_days_header_temperature">%s˚</string>
+
+    <!--  TEN DAYS DETAILS  -->
+    <string name="lbl_ten_days_details_volume">Volume</string>
+    <string name="lbl_ten_days_details_sunrise">Sunrise</string>
+    <string name="lbl_ten_days_details_sunset">Sunset</string>
+    <string name="lbl_ten_days_details_humidity">%s%%</string>
+
+    <!--  TEN DAYS HOURLY FORECAST  -->
+    <string name="lbl_ten_days_hourly_forecast">%s˚</string>
 
 </resources>

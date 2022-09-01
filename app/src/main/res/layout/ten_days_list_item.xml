@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/ten_days_list_item_distance">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ten_days_list_item_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="ten_days_list_item_details, ten_days_list_item_hourly_forecast" />
+
+    <include
+        android:id="@+id/ten_days_list_item_header"
+        layout="@layout/ten_days_list_item_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/ten_days_list_item_distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/ten_days_list_item_details"
+        layout="@layout/ten_days_list_item_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/ten_days_list_item_header"
+        app:layout_constraintTop_toBottomOf="@id/ten_days_list_item_header" />
+
+    <include
+        android:id="@+id/ten_days_list_item_hourly_forecast"
+        layout="@layout/ten_days_list_item_hourly_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ten_days_list_item_details" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

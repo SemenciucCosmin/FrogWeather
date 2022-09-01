@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/header_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/black"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Wednesday 31" />
+
+    <TextView
+        android:id="@+id/header_forecast_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_date"
+        tools:text="Light rain" />
+
+    <TextView
+        android:id="@+id/header_precipitation_chance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/cyan2"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_1"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="@dimen/ten_days_list_item_header_element_horizontal_distance"
+        app:layout_constraintEnd_toStartOf="@id/header_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="82%" />
+
+    <ImageView
+        android:id="@+id/header_icon"
+        android:layout_width="@dimen/ten_days_list_item_header_icon_size"
+        android:layout_height="@dimen/ten_days_list_item_header_icon_size"
+        android:layout_marginHorizontal="@dimen/ten_days_list_item_header_element_horizontal_distance"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_cloudy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/header_max_temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_max_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="23˚" />
+
+    <TextView
+        android:id="@+id/header_min_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="17˚" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

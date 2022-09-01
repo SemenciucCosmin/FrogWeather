@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/precipitation_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_5"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="@dimen/chance_icon_size"
+        android:layout_height="@dimen/chance_icon_size"
+        android:layout_marginHorizontal="@dimen/chance_icon_horizontal_distance"
+        android:layout_marginVertical="@dimen/chance_icon_vertical_distance"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_umbrella" />
+
+    <TextView
+        android:id="@+id/one_day_chance_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/white"
+        android:textSize="@dimen/chance_text_size"
+        android:textStyle="bold"
+        tools:text="Chance 20%" />
+</LinearLayout>
