@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frogweather.data.classes.PrecipitationDetail
-import com.example.frogweather.ui.holders.HourlyPrecipitationItemViewHolder
 import com.example.frogweather.databinding.OneDayHourlyPrecipitationItemBinding
+import com.example.frogweather.ui.holders.HourlyPrecipitationItemViewHolder
 
 class HourlyPrecipitationAdapter : ListAdapter<PrecipitationDetail, RecyclerView.ViewHolder>(DiffCallback) {
 

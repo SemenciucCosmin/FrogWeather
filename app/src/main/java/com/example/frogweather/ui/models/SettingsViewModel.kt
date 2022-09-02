@@ -9,12 +9,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
-import com.example.frogweather.data.utils.LOCATION_UPDATE_INTERVAL
-import com.example.frogweather.data.utils.MINUTES_DIVIDER
+import com.example.frogweather.data.classes.MyLocation
 import com.example.frogweather.data.classes.Settings
 import com.example.frogweather.data.preferences.SettingsDataSource
 import com.example.frogweather.data.repository.SettingsRepository
-import com.example.frogweather.data.classes.MyLocation
+import com.example.frogweather.data.utils.LOCATION_UPDATE_INTERVAL
+import com.example.frogweather.data.utils.MINUTES_DIVIDER
 import com.example.frogweather.ui.application.FrogWeatherApplication
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
         return settingsRepository.getSettings().asLiveData()
     }
 
-    fun getSettingsAndLocation(): LiveData<Pair<Settings, MyLocation>>{
+    fun getSettingsAndLocation(): LiveData<Pair<Settings, MyLocation>> {
         return settingsRepository.getSettingsAdnLocation().asLiveData()
     }
 

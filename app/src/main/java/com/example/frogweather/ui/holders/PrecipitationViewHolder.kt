@@ -4,9 +4,9 @@ import android.view.MotionEvent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frogweather.R
-import com.example.frogweather.ui.adapters.HourlyPrecipitationAdapter
 import com.example.frogweather.data.classes.OneDayListItem
 import com.example.frogweather.databinding.OneDayPrecipitationBinding
+import com.example.frogweather.ui.adapters.HourlyPrecipitationAdapter
 
 class PrecipitationViewHolder(private val binding: OneDayPrecipitationBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(precipitation: OneDayListItem.PrecipitationDataClass) {

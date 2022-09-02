@@ -1,10 +1,10 @@
 package com.example.frogweather.data.service
 
 import com.example.frogweather.BuildConfig
-import com.example.frogweather.data.utils.DAILY_FORECAST_API_BASE_URL
-import com.example.frogweather.data.utils.HOURLY_FORECAST_API_BASE_URL
 import com.example.frogweather.data.dtos.ApiDataDaily
 import com.example.frogweather.data.dtos.ApiDataHourly
+import com.example.frogweather.data.utils.DAILY_FORECAST_API_BASE_URL
+import com.example.frogweather.data.utils.HOURLY_FORECAST_API_BASE_URL
 import com.example.frogweather.data.utils.TEN_DAYS
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -51,4 +51,3 @@ object FrogWeatherApi {
     val hourlyForecastRetrofitService: FrogWeatherHourlyApiService by lazy { hourlyForecastRetrofit.create(FrogWeatherHourlyApiService::class.java) }
     val dailyForecastRetrofitService: FrogWeatherDailyApiService by lazy { dailyForecastRetrofit.create(FrogWeatherDailyApiService::class.java) }
 }
-

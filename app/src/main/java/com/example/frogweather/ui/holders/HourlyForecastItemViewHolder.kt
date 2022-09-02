@@ -7,7 +7,7 @@ import com.example.frogweather.databinding.OneDayHourlyForecastItemBinding
 
 class HourlyForecastItemViewHolder(private val binding: OneDayHourlyForecastItemBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(forecastDetail: ForecastDetail) {
-        binding.hourlyForecastPrecipitation.text = if (forecastDetail.chance != 0) {itemView.resources.getString(R.string.lbl_hourly_forecast_precipitation).format(forecastDetail.chance)} else {""}
+        binding.hourlyForecastPrecipitation.text = if (forecastDetail.chance != 0) { itemView.resources.getString(R.string.lbl_hourly_forecast_precipitation).format(forecastDetail.chance) } else { "" }
         binding.hourlyForecastTemperature.text = itemView.resources.getString(R.string.lbl_hourly_forecast_temperature).format(forecastDetail.temperature)
         binding.hourlyForecastTime.text = forecastDetail.time
     }

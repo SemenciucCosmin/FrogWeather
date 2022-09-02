@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.frogweather.data.TenDaysListItemState
 import com.example.frogweather.data.classes.TenDaysListItem
+import com.example.frogweather.data.classes.TenDaysListItemState
 import com.example.frogweather.databinding.TenDaysListItemBinding
 import com.example.frogweather.ui.holders.TenDaysListItemViewHolder
 

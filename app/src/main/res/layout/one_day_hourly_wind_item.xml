@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -25,12 +26,20 @@
         tools:text="2" />
 
     <View
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <View
         android:id="@+id/hourly_wind_speed_icon"
         android:layout_width="@dimen/hourly_wind_item_speed_icon_size"
         android:layout_height="@dimen/hourly_wind_item_speed_icon_size"
         android:layout_marginVertical="@dimen/hourly_wind_item_element_vertical_distance"
         android:background="@color/gray_4"
-        android:foregroundGravity="bottom" />
+
+        app:layout_constraintBottom_toTopOf="@id/hourly_wind_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/hourly_wind_time"
@@ -41,5 +50,9 @@
         android:textColor="@color/black"
         android:textSize="@dimen/hourly_wind_item_text_size"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="12:00" />
+
 </LinearLayout>

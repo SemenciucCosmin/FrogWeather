@@ -1,8 +1,8 @@
 package com.example.frogweather.data.repository
 
+import com.example.frogweather.data.classes.CallResult
 import com.example.frogweather.data.dtos.ApiDataDaily
 import com.example.frogweather.data.dtos.ApiDataHourly
-import com.example.frogweather.data.classes.CallResult
 import com.example.frogweather.data.service.FrogWeatherApi
 import java.io.IOException
 
@@ -13,7 +13,6 @@ class NetworkRepository {
 
     suspend fun getHourlyForecast(latitude: Double, longitude: Double) =
         safeApiCall(call = { getHourlyForecastCall(latitude, longitude) }, errorMessage = "Exception occurred")
-
 
     private suspend fun getDailyForecastCall(latitude: Double, longitude: Double): CallResult<ApiDataDaily> {
         val response = FrogWeatherApi.dailyForecastRetrofitService.getDailyForecast(latitude, longitude)

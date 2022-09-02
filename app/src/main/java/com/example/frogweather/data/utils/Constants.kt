@@ -49,3 +49,6 @@ const val MPS_TO_KN = 1.94384449
 const val MPS_TO_BFT = 1.126840655
 const val ONE_DAY = 86400000
 const val TEN_DAYS = 10
+const val SPEED_HEIGHT_MULTIPLIER = 7
+const val MPS_HEIGHT_UNIT = 10
+const val DEFAULT_SPEED_ICON_HEIGHT = 92

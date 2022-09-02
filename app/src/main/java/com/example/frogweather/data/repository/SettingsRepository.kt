@@ -14,7 +14,9 @@ class SettingsRepository(private val settingsDataSource: SettingsDataSource) {
     fun getLocation(): Flow<MyLocation> = settingsDataSource.locationFlow
 
     fun getSettingsAdnLocation(): Flow<Pair<Settings, MyLocation>> = settingsDataSource.settingsFlow.combine(settingsDataSource.locationFlow) {
-            settings: Settings, location: MyLocation -> Pair(settings, location) }
+        settings: Settings, location: MyLocation ->
+        Pair(settings, location)
+    }
 
     suspend fun saveLocationToPreferenceStore(location: MyLocation, context: Context) {
         settingsDataSource.saveLocationToPreferenceStore(location, context)
@@ -59,5 +61,4 @@ class SettingsRepository(private val settingsDataSource: SettingsDataSource) {
     suspend fun saveNotificationTypeToPreferenceStore(notificationType: String, context: Context) {
         settingsDataSource.saveNotificationTypeToPreferenceStore(notificationType, context)
     }
-
 }

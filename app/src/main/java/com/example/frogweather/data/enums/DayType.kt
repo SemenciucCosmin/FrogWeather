@@ -29,9 +29,7 @@ enum class DayType(val dayType: Int, val dayPosition: Int, val dateTimeResourceI
             return when (dayType) {
                 TODAY -> monthDayFormatter.format(Date(millis))
                 TOMORROW -> monthDayFormatter.format(Date(millis + ONE_DAY))
-
             }
         }
-
     }
 }

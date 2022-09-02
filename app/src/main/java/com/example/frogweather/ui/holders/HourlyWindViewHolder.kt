@@ -5,9 +5,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frogweather.R
-import com.example.frogweather.ui.adapters.HourlyWindAdapter
 import com.example.frogweather.data.classes.OneDayListItem
 import com.example.frogweather.databinding.OneDayWindBinding
+import com.example.frogweather.ui.adapters.HourlyWindAdapter
 
 class HourlyWindViewHolder(private val binding: OneDayWindBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(wind: OneDayListItem.WindDataClass) {

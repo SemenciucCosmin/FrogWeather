@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -12,14 +11,15 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.frogweather.R
-import com.example.frogweather.data.enums.DayType
 import com.example.frogweather.data.classes.MyLocation
-import com.example.frogweather.ui.adapters.ViewPagerAdapter
+import com.example.frogweather.data.enums.DayType
 import com.example.frogweather.databinding.FragmentMainBinding
+import com.example.frogweather.ui.adapters.ViewPagerAdapter
 import com.example.frogweather.ui.application.FrogWeatherApplication
 import com.example.frogweather.ui.models.NetworkViewModel
 import com.example.frogweather.ui.models.SettingsViewModel
@@ -42,7 +42,8 @@ class MainFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
@@ -108,10 +109,13 @@ class MainFragment : Fragment() {
                 requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
-                override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
-                override fun isCancellationRequested() = false
-            }).addOnSuccessListener { location: Location? ->
+            fusedLocationClient.getCurrentLocation(
+                Priority.PRIORITY_HIGH_ACCURACY,
+                object : CancellationToken() {
+                    override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
+                    override fun isCancellationRequested() = false
+                }
+            ).addOnSuccessListener { location: Location? ->
                 if (location != null) {
                     settingsViewModel.saveLocation(MyLocation(System.currentTimeMillis(), location.latitude, location.longitude), requireContext())
                 }

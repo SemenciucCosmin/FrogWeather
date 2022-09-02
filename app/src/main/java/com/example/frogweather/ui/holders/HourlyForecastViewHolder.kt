@@ -3,9 +3,9 @@ package com.example.frogweather.ui.holders
 import android.view.MotionEvent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.frogweather.ui.adapters.HourlyForecastAdapter
 import com.example.frogweather.data.classes.OneDayListItem
 import com.example.frogweather.databinding.OneDayHourlyForecastBinding
+import com.example.frogweather.ui.adapters.HourlyForecastAdapter
 
 class HourlyForecastViewHolder(private val binding: OneDayHourlyForecastBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(hourlyForecast: OneDayListItem.HourlyForecastDataClass) {

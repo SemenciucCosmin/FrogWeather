@@ -10,6 +10,8 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.frogweather.data.classes.MyLocation
+import com.example.frogweather.data.classes.Settings
 import com.example.frogweather.data.utils.DEFAULT_COORDINATE
 import com.example.frogweather.data.utils.DEFAULT_MILLIS
 import com.example.frogweather.data.utils.DISTANCE_KM
@@ -20,12 +22,10 @@ import com.example.frogweather.data.utils.SETTINGS_PREFERENCE_NAME
 import com.example.frogweather.data.utils.SPEED_METERS
 import com.example.frogweather.data.utils.TEMPERATURE_CELSIUS
 import com.example.frogweather.data.utils.WIND_DIRECTION_ARROWS
-import com.example.frogweather.data.classes.MyLocation
-import com.example.frogweather.data.classes.Settings
-import java.io.IOException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import java.io.IOException
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = SETTINGS_PREFERENCE_NAME)
 

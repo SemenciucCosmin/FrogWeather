@@ -48,9 +48,11 @@ sealed class OneDayListItem(val itemViewType: OneDayItemViewType) {
         val visibilityLabel: Int
     ) : OneDayListItem(OneDayItemViewType.DETAILS) {
         override val id: Long
-            get() = (humidity.toString() +
+            get() = (
+                humidity.toString() +
                     pressureValue +
-                    visibilityValue).hashCode().toLong()
+                    visibilityValue
+                ).hashCode().toLong()
         override val content: Long
             get() = id
     }

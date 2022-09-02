@@ -13,7 +13,7 @@ class HourlyWindItemViewHolder(private val binding: OneDayHourlyWindItemBinding)
             hourlyWindDirectionIcon.setImageDrawable(ContextCompat.getDrawable(itemView.context, windDetail.directionType.resourceId))
             hourlyWindSpeedIcon.setBackgroundColor(ContextCompat.getColor(itemView.context, windDetail.speed.colorResourceId))
             val params = hourlyWindSpeedIcon.layoutParams
-            params.height = params.height + windDetail.speed.iconHeight
+            params.height = windDetail.speed.iconHeight
             hourlyWindSpeedIcon.requestLayout()
         }
     }

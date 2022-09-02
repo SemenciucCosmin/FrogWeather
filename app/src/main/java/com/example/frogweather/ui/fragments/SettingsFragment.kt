@@ -3,45 +3,45 @@ package com.example.frogweather.ui.fragments
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.frogweather.R
+import com.example.frogweather.data.classes.Settings
+import com.example.frogweather.data.enums.DistanceType
+import com.example.frogweather.data.enums.LengthType
+import com.example.frogweather.data.enums.NotificationType
+import com.example.frogweather.data.enums.PressureType
+import com.example.frogweather.data.enums.SettingType
+import com.example.frogweather.data.enums.SpeedType
+import com.example.frogweather.data.enums.TemperatureType
+import com.example.frogweather.data.enums.WindDirectionType
 import com.example.frogweather.data.utils.DISTANCE_KM
 import com.example.frogweather.data.utils.DISTANCE_MI
-import com.example.frogweather.data.enums.DistanceType
 import com.example.frogweather.data.utils.LENGTH_INCHES
 import com.example.frogweather.data.utils.LENGTH_MILLIMETERS
-import com.example.frogweather.data.enums.LengthType
 import com.example.frogweather.data.utils.NOTIFICATION_TYPE_DEFAULT
 import com.example.frogweather.data.utils.NOTIFICATION_TYPE_SIMPLE
-import com.example.frogweather.data.enums.NotificationType
 import com.example.frogweather.data.utils.PRESSURE_HPA
 import com.example.frogweather.data.utils.PRESSURE_INHG
 import com.example.frogweather.data.utils.PRESSURE_KPA
 import com.example.frogweather.data.utils.PRESSURE_MMHG
-import com.example.frogweather.data.enums.PressureType
 import com.example.frogweather.data.utils.SPEED_BEAUFORT
 import com.example.frogweather.data.utils.SPEED_KILOMETERS
 import com.example.frogweather.data.utils.SPEED_KNOTS
 import com.example.frogweather.data.utils.SPEED_METERS
 import com.example.frogweather.data.utils.SPEED_MILES
-import com.example.frogweather.data.enums.SettingType
-import com.example.frogweather.data.classes.Settings
-import com.example.frogweather.data.enums.SpeedType
 import com.example.frogweather.data.utils.TEMPERATURE_CELSIUS
 import com.example.frogweather.data.utils.TEMPERATURE_FAHRENHEIT
 import com.example.frogweather.data.utils.TEMPERATURE_KELVIN
-import com.example.frogweather.data.enums.TemperatureType
 import com.example.frogweather.data.utils.WIND_DIRECTION_ABBREVIATIONS
 import com.example.frogweather.data.utils.WIND_DIRECTION_ARROWS
 import com.example.frogweather.data.utils.WIND_DIRECTION_NO_INDICATION
-import com.example.frogweather.data.enums.WindDirectionType
 import com.example.frogweather.databinding.FragmentSettingsBinding
 import com.example.frogweather.ui.application.FrogWeatherApplication
 import com.example.frogweather.ui.models.SettingsViewModel
@@ -55,7 +55,8 @@ class SettingsFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)

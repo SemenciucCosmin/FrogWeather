@@ -20,7 +20,6 @@ import com.example.frogweather.ui.models.NetworkViewModel
 import com.example.frogweather.ui.models.SettingsViewModel
 import com.google.android.material.snackbar.Snackbar
 
-
 class OneDayFragment : Fragment() {
     private lateinit var binding: FragmentOneDayBinding
     private val networkViewModel = NetworkViewModel()
@@ -31,7 +30,8 @@ class OneDayFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentOneDayBinding.inflate(inflater, container, false)

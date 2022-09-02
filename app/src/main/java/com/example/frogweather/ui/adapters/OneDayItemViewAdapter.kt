@@ -7,18 +7,18 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frogweather.data.classes.OneDayListItem
 import com.example.frogweather.data.enums.OneDayItemViewType
-import com.example.frogweather.ui.holders.ChanceViewHolder
-import com.example.frogweather.ui.holders.CurrentForecastViewHolder
-import com.example.frogweather.ui.holders.DetailsViewHolder
-import com.example.frogweather.ui.holders.HourlyForecastViewHolder
-import com.example.frogweather.ui.holders.PrecipitationViewHolder
-import com.example.frogweather.ui.holders.HourlyWindViewHolder
 import com.example.frogweather.databinding.OneDayChanceBinding
 import com.example.frogweather.databinding.OneDayDetailsBinding
 import com.example.frogweather.databinding.OneDayHourlyForecastBinding
 import com.example.frogweather.databinding.OneDayMainForecastBinding
 import com.example.frogweather.databinding.OneDayPrecipitationBinding
 import com.example.frogweather.databinding.OneDayWindBinding
+import com.example.frogweather.ui.holders.ChanceViewHolder
+import com.example.frogweather.ui.holders.CurrentForecastViewHolder
+import com.example.frogweather.ui.holders.DetailsViewHolder
+import com.example.frogweather.ui.holders.HourlyForecastViewHolder
+import com.example.frogweather.ui.holders.HourlyWindViewHolder
+import com.example.frogweather.ui.holders.PrecipitationViewHolder
 
 class OneDayItemViewAdapter : ListAdapter<OneDayListItem, RecyclerView.ViewHolder>(DiffCallback) {
 

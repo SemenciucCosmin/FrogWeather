@@ -15,8 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.frogweather.R
-import com.example.frogweather.databinding.ActivityMainBinding
 import com.example.frogweather.data.classes.MyLocation
+import com.example.frogweather.databinding.ActivityMainBinding
 import com.example.frogweather.ui.application.FrogWeatherApplication
 import com.example.frogweather.ui.models.SettingsViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -25,7 +25,6 @@ import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationToken
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.gms.tasks.OnTokenCanceledListener
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -88,10 +87,13 @@ class MainActivity : AppCompatActivity() {
                 this, Manifest.permission.ACCESS_COARSE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
-                override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
-                override fun isCancellationRequested() = false
-            }).addOnSuccessListener { location: Location? ->
+            fusedLocationClient.getCurrentLocation(
+                Priority.PRIORITY_HIGH_ACCURACY,
+                object : CancellationToken() {
+                    override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
+                    override fun isCancellationRequested() = false
+                }
+            ).addOnSuccessListener { location: Location? ->
                 if (location != null) {
                     settingsViewModel.saveLocation(MyLocation(System.currentTimeMillis(), location.latitude, location.longitude), this)
                 }

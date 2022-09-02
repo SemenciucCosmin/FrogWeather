@@ -1,17 +1,17 @@
 package com.example.frogweather.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.frogweather.R
-import com.example.frogweather.data.TenDaysListItemState
 import com.example.frogweather.data.classes.TenDaysListItem
+import com.example.frogweather.data.classes.TenDaysListItemState
 import com.example.frogweather.databinding.FragmentTenDaysBinding
 import com.example.frogweather.ui.adapters.TenDaysAdapter
 import com.example.frogweather.ui.application.FrogWeatherApplication
@@ -28,7 +28,8 @@ class TenDaysFragment : Fragment(), TenDaysListItemState {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentTenDaysBinding.inflate(inflater, container, false)

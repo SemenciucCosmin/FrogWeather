@@ -7,8 +7,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frogweather.R
-import com.example.frogweather.data.TenDaysListItemState
 import com.example.frogweather.data.classes.TenDaysListItem
+import com.example.frogweather.data.classes.TenDaysListItemState
 import com.example.frogweather.databinding.TenDaysListItemBinding
 import com.example.frogweather.ui.adapters.TenDaysHourlyForecastAdapter
 
@@ -55,10 +55,10 @@ class TenDaysListItemViewHolder(private val binding: TenDaysListItemBinding) : R
             override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
         })
 
-        binding.tenDaysListItemGroup.visibility = if(!tenDaysListItem.isCollapsed) View.VISIBLE else View.GONE
+        binding.tenDaysListItemGroup.visibility = if (!tenDaysListItem.isCollapsed) View.VISIBLE else View.GONE
         binding.tenDaysListItemHeader.root.setOnClickListener {
             listener.onItemClicked(tenDaysListItem)
-            binding.tenDaysListItemGroup.visibility = if(!tenDaysListItem.isCollapsed) View.VISIBLE else View.GONE
+            binding.tenDaysListItemGroup.visibility = if (!tenDaysListItem.isCollapsed) View.VISIBLE else View.GONE
         }
     }
 }
