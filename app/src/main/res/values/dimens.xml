@@ -95,4 +95,8 @@
     <dimen name="ten_days_list_item_details_distance">10dp</dimen>
     <dimen name="ten_days_list_item_distance">20dp</dimen>
 
+    <!--  WEATHER MAP  -->
+    <dimen name="weather_map_text_size">20sp</dimen>
+    <dimen name="weather_map_text_padding">20dp</dimen>
+
 </resources>

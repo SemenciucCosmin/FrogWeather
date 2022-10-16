@@ -11,6 +11,7 @@ import com.example.frogweather.data.classes.PrecipitationDetail
 import com.example.frogweather.data.classes.Settings
 import com.example.frogweather.data.classes.TenDaysListItem
 import com.example.frogweather.data.classes.WindDetail
+import com.example.frogweather.data.dtos.City
 import com.example.frogweather.data.dtos.ForecastDaily
 import com.example.frogweather.data.dtos.ForecastHourly
 import com.example.frogweather.data.enums.DayType
@@ -62,6 +63,7 @@ class NetworkViewModel : ViewModel() {
                                     dailyResult.data.list,
                                     hourlyResult.data.list
                                 ),
+                                city = dailyResult.data.city,
                                 errorMessageTenDays = null
                             )
                         is CallResult.Error ->
@@ -359,6 +361,7 @@ class NetworkViewModel : ViewModel() {
 data class UIState(
     val tenDaysItems: List<TenDaysListItem>,
     val oneDayItems: List<OneDayListItem>,
+    val city: City? = null,
     val errorMessageTenDays: String? = null,
     val errorMessageOneDay: String? = null
 )

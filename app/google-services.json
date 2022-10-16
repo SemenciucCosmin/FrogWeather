@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "178738763120",
+    "project_id": "frogweather-3cdcb",
+    "storage_bucket": "frogweather-3cdcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178738763120:android:2cea37902ee1923c34abb5",
+        "android_client_info": {
+          "package_name": "com.example.frogweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178738763120-08v9ng46gbppb9027ghvsenv3h2sqfmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_8CBc5T4nOV1PUcRApPlmw7ZGEQ6lwk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178738763120-08v9ng46gbppb9027ghvsenv3h2sqfmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
