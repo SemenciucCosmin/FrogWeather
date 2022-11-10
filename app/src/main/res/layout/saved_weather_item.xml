@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/black"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Cluj Napoca" />
+
+    <TextView
+        android:id="@+id/header_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/black"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        tools:text="Wednesday 31" />
+
+    <TextView
+        android:id="@+id/header_forecast_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_date"
+        tools:text="Light rain" />
+
+    <TextView
+        android:id="@+id/current_temperature_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current: "
+        android:paddingStart="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintStart_toEndOf="@id/header_date"
+        app:layout_constraintTop_toBottomOf="@id/location" />
+
+    <TextView
+        android:id="@+id/current_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="22"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintStart_toEndOf="@id/current_temperature_label"
+        app:layout_constraintTop_toBottomOf="@id/location" />
+
+    <TextView
+        android:id="@+id/feels_like_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feels like: "
+        android:paddingStart="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintStart_toStartOf="@id/current_temperature_label"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/feels_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="22"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintStart_toEndOf="@id/feels_like_label"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/max_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max: "
+        android:paddingStart="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintEnd_toStartOf="@id/header_max_temperature"
+        app:layout_constraintTop_toBottomOf="@id/location" />
+
+    <TextView
+        android:id="@+id/header_max_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        tools:text="23˚" />
+    
+    <TextView
+        android:id="@+id/min_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min: "
+        android:paddingStart="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/gray_3"
+        app:layout_constraintEnd_toStartOf="@id/header_min_temperature"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/header_min_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pluto_sans_cond_light"
+        android:textColor="@color/gray_3"
+        android:textSize="@dimen/ten_days_list_item_header_text_size_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="17˚" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

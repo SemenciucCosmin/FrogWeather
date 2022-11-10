@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.WeatherMapFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
     <include
         android:id="@+id/fragment_weather_map_app_bar"
-        layout="@layout/app_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        layout="@layout/app_bar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/fragment_weather_map_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/weather_map_text_size"
+        android:textColor="@color/black_1"
+        android:text="@string/lbl_weather_map_current_location"
+        android:padding="@dimen/weather_map_text_padding"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/fragment_weather_map_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_1"
+        android:text="@string/lbl_weather_add_button"
+        android:textColor="@color/gray_3"/>
+
+    <Button
+        android:id="@+id/fragment_weather_map_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_1"
+        android:text="@string/lbl_weather_update_button"
+        android:textColor="@color/gray_3"/>
+
+    <Button
+        android:id="@+id/fragment_weather_map_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_1"
+        android:text="@string/lbl_weather_delete_button"
+        android:textColor="@color/gray_3"/>
+
+    <TextView
+        android:id="@+id/fragment_weather_map_saved_weathers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/weather_map_text_size"
+        android:textColor="@color/black_1"
+        android:text="@string/lbl_weather_map_saved_weather_entries"
+        android:padding="@dimen/weather_map_text_padding"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saved_weathers_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/saved_weather_item" />
+
+</LinearLayout>

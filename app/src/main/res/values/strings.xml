@@ -143,4 +143,10 @@
     <!--  TEN DAYS HOURLY FORECAST  -->
     <string name="lbl_ten_days_hourly_forecast">%s˚</string>
 
+    <!--  WEATHER MAP  -->
+    <string name="lbl_weather_map_current_location">Your current location: %s</string>
+    <string name="lbl_weather_map_saved_weather_entries">Your saved weather entries</string>
+    <string name="lbl_weather_add_button">Add weather for current location</string>
+    <string name="lbl_weather_update_button">Update weather for current location</string>
+    <string name="lbl_weather_delete_button">Delete weather for current location</string>
 </resources>
